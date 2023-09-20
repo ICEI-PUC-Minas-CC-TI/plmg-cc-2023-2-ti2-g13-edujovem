@@ -21,7 +21,7 @@ código-fonte.
 
 A equipe é composta por alunos do 2° período de Ciências da Computação na Universidade PUC MINAS. Parte da equipe contribui com trabalhos voluntários na UFMG, lecionando o curso de educação financeira Mais Renda - Projeto Incluir.
 
-Pessoalmente, somos uma equipe empenhada e apaixonada pela área de Tecnologia. Estamos abertos à oportunidades e experiências dentro do mercado. Um de nossos destaques é o compromisso com o profissionalismo e assertividade, seja na comunicação, conviência e na produtividade. 
+Pessoalmente, somos uma equipe empenhada e apaixonada pela área de Tecnologia. Estamos abertos a oportunidades e experiências dentro do mercado. Um de nossos destaques é o compromisso com o profissionalismo e assertividade, seja na comunicação, conviência e na produtividade. 
 
 ## Professores responsáveis
 
