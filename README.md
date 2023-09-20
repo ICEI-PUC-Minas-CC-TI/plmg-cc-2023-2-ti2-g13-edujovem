@@ -1,6 +1,6 @@
 # EduJovem
 
-A educação financeira é um tema fundamental para a vida uma pessoa e mesmo assim é negligenciada por uma grande parcela da população, que sofre com as consequências dessa ignorância. Dessa forma, objetivoda aplicação EduJovem é oferecer ferramentas e recursos para ajudar seus usuários a gerenciar suas finanças
+A educação financeira é um tema fundamental para a vida uma pessoa e mesmo assim é negligenciada por uma grande parcela da população, que sofre com as consequências dessa ignorância. Dessa forma, objetivo da aplicação EduJovem é oferecer ferramentas e recursos para ajudar seus usuários a gerenciar suas finanças
 de forma eficiente e responsável. Ele segue os padrões da engenharia de software, como análise de
 requisitos, projeto, implementação, teste e manutenção. A documentação contém uma descrição
 detalhada do problema, da solução, das funcionalidades, dos casos de uso, dos diagramas e do
