@@ -1,6 +1,6 @@
 # EduJovem
 
-A educação financeira no, tema fundamental para a vida, é um tema continuamente negligenciado por grande parcela da população brasileira. A partir dessa premissa que idealizamos a aplicação EduJovem, que visa oferecer ferramentas e recursos para ajudar seus usuários a gerenciar suas finanças
+A educação financeira, tema fundamental para a vida, é um tema continuamente negligenciado por grande parcela da população brasileira. A partir dessa premissa que idealizamos a aplicação EduJovem, que visa oferecer ferramentas e recursos para ajudar seus usuários a gerenciar suas finanças
 de forma eficiente e responsável. Seu desenvolvimento segue com os padrões da engenharia de software, como análise de
 requisitos, projeto ágil, implementação prototipada, testes contínuos e eficiência. Além disso, a equipe responsável por seu desenvolvimento agrega as metodologias XP (Extreme Programming) e SCRUM framework.
 
