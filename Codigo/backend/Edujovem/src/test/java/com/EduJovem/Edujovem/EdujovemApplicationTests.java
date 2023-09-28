@@ -1,10 +1,10 @@
-package com.crudTeste.fullstackbackend;
+package com.EduJovem.Edujovem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FullstackBackendApplicationTests {
+class EdujovemApplicationTests {
 
 	@Test
 	void contextLoads() {

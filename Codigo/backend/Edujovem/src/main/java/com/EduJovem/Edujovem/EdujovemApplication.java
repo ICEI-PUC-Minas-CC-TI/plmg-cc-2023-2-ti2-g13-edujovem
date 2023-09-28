@@ -1,13 +1,13 @@
-package com.crudTeste.fullstackbackend;
+package com.EduJovem.Edujovem;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FullstackBackendApplication {
+public class EdujovemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FullstackBackendApplication.class, args);
+		SpringApplication.run(EdujovemApplication.class, args);
 	}
 
 }
