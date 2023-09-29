@@ -1,5 +1,8 @@
-import { BrowserRouter } from 'react-router-dom';
-import Navbar from './components/navbar';
+import { BrowserRouter } from 'react-router-dom'
+import Hero from './components/Hero'
+import Informational from './components/Informational'
+import React from 'react'
+
 
 const App = () => {
   return (
@@ -7,7 +10,8 @@ const App = () => {
     
     <div className="relative z-0 bg-white text-black font-montserrat font-semibold">
       
-      <Navbar/>
+      <Hero/>
+      <Informational/>
     </div>
     
     </BrowserRouter>
@@ -16,3 +20,5 @@ const App = () => {
 }
 
 export default App
+
+

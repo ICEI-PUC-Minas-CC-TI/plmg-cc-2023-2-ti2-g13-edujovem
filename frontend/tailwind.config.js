@@ -17,14 +17,22 @@ module.exports = {
       fontFamily: {
         montserrat: ['Montserrat'],
       },
+      fontSize: {
+        spct: "3vw",
+      },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
       },
       screens: {
         xs: "450px",
+        'start': '0px',
+        'tablet': '640px',
+        'laptop': '1024px',
+        'desktop': '1280px',
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/herobg.png')",
+        "countmoneyVID": "url('/src/assets/contmoney.png')",
       },
     },
   },
