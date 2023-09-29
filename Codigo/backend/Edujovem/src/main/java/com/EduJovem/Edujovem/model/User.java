@@ -3,6 +3,7 @@ package com.EduJovem.Edujovem.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "usuario")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

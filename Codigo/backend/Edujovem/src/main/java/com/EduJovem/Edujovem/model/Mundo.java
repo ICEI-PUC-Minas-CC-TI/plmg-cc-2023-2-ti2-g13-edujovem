@@ -3,6 +3,7 @@ package com.EduJovem.Edujovem.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "tb_mundo")
 public class Mundo {
     @Id
     @GeneratedValue
