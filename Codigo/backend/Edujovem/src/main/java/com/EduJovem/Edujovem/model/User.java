@@ -45,4 +45,8 @@ public class User {
     public void setMundo(Mundo mundo) {
         this.mundo = mundo;
     }
+
+    public String findByEmail(String email) {
+        return email;
+    }
 }
