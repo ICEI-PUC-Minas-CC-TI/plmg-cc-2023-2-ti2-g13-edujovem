@@ -23,13 +23,4 @@ public class UserService {
     }
 
     //Metodo de cadastro de produtos
-    public ResponseEntity<?> cadastrar(User user){
-
-        if(userR.findByEmail(user.getemail()).isPresent()){
-            respostaModel.setMensagem("Email já cadastrado");
-            return ResponseEntity.badRequest().body(respostaModel);
-        }
-
-
-    }
 }
