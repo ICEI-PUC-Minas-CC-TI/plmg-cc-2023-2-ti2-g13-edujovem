@@ -1,12 +1,11 @@
 package com.EduJovem.Edujovem.controller;
-
 import com.EduJovem.Edujovem.model.User;
-import com.EduJovem.Edujovem.repository.UserRepository;
 import com.EduJovem.Edujovem.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserControler {
@@ -25,5 +24,9 @@ public class UserControler {
     public Iterable<User> listar() {
         return userService.listar();
     }
-
+    //Metodo de cadastro de produtos com informacoes validadas
+    @PostMapping("/user")
+    public ResponseEntity<?> cadastrar(@RequestBody User user){
+        return userService.cadastrar(user);
+    }
 }
