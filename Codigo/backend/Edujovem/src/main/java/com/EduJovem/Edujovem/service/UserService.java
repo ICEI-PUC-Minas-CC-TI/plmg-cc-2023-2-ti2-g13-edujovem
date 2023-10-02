@@ -43,5 +43,13 @@ public class UserService {
             }
         }
         // precisa implementar um validador de email ja cadastrado, quantidade minima de caracters. A decidir com o grupo
+
+    }
+    
+    //Metodo de remocao de Usuario
+    public ResponseEntity<RespostaModel> remover(Long id) {
+        userR.deleteById(id);
+        respostaModel.setMensagem("Usuario removido com sucesso");
+        return new ResponseEntity<RespostaModel>(respostaModel, HttpStatus.OK);
     }
 }

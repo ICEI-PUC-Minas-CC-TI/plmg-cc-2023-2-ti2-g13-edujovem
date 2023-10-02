@@ -1,4 +1,5 @@
 package com.EduJovem.Edujovem.controller;
+import com.EduJovem.Edujovem.model.RespostaModel;
 import com.EduJovem.Edujovem.model.User;
 import com.EduJovem.Edujovem.service.UserService;
 
@@ -19,18 +20,28 @@ public class UserControler {
     }
 
 
-    //Metodo de listagem de todos produtos
+    //Rota de listagem de todos usuarios
     @GetMapping("/userMostrar")
     public Iterable<User> listar() {
         return userService.listar();
     }
-    //Metodo de cadastro de produtos com informacoes validadas
+
+    //Rota de cadastro de usuarios com informacoes validadas
     @PostMapping("/userCadastrar")
     public ResponseEntity<?> cadastrar(@RequestBody User user){
         return userService.cadastrarAlterar(user, "cadastrar");
     }
+
+    //Rota para alterar usuarios com informacoes validadas
     @PostMapping("/userAlterar")
     public ResponseEntity<?> alterar(@RequestBody User user){
         return userService.cadastrarAlterar(user, "alterar");
     }
+
+    //Rota para remover usuarios
+    @DeleteMapping("/userRemover/{id}")
+    public ResponseEntity<RespostaModel> remover(@PathVariable Long id){
+        return userService.remover(id);
+    }
+
 }
