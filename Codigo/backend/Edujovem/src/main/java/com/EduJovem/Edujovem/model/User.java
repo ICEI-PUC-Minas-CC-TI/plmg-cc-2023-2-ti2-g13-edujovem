@@ -15,9 +15,9 @@ public class User {
     private String name;
     private String email;
     private String password;
-    @OneToOne  //deixei temporariamente
-    @JoinColumn(name = "codigoMundo", referencedColumnName = "id")
-    private Mundo mundo;
+    //@OneToOne  //deixei temporariamente
+    //@JoinColumn(name = "codigoMundo", referencedColumnName = "id")
+    //private Mundo mundo;
 
 
 }

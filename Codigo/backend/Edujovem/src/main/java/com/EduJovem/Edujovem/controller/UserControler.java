@@ -20,13 +20,17 @@ public class UserControler {
 
 
     //Metodo de listagem de todos produtos
-    @GetMapping("/users")
+    @GetMapping("/userMostrar")
     public Iterable<User> listar() {
         return userService.listar();
     }
     //Metodo de cadastro de produtos com informacoes validadas
-    @PostMapping("/user")
+    @PostMapping("/userCadastrar")
     public ResponseEntity<?> cadastrar(@RequestBody User user){
-        return userService.cadastrar(user);
+        return userService.cadastrarAlterar(user, "cadastrar");
+    }
+    @PostMapping("/userAlterar")
+    public ResponseEntity<?> alterar(@RequestBody User user){
+        return userService.cadastrarAlterar(user, "alterar");
     }
 }

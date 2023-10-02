@@ -23,20 +23,24 @@ public class UserService {
         return userR.findAll();
     }
 
-    //Metodo de cadastro de produtos com informacoes validadas
-    public ResponseEntity<?> cadastrar(User user){
+    //Metodo de cadastro ou alteracao de produtos com informacoes validadas
+    public ResponseEntity<?> cadastrarAlterar(User user, String action){
 
-        if(user.getName().equals("")) {
+        if(user.getName().isEmpty()) {
             respostaModel.setMensagem("Nome do usuario e obrigatorio");
             return new ResponseEntity<RespostaModel>(respostaModel, HttpStatus.BAD_REQUEST);
-        } else if (user.getEmail().equals("")){
+        } else if (user.getEmail().isEmpty()){
             respostaModel.setMensagem("O email e obrigatorio");
             return new ResponseEntity<RespostaModel>(respostaModel, HttpStatus.BAD_REQUEST);
-        } else if (user.getPassword().equals("")){
+        } else if (user.getPassword().isEmpty()){
             respostaModel.setMensagem("A senha e obrigatoria");
             return new ResponseEntity<RespostaModel>(respostaModel, HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<User>(userR.save(user), HttpStatus.CREATED);
+            if(action.equals("cadastrar")){
+                return new ResponseEntity<User>(userR.save(user), HttpStatus.CREATED);
+            } else{
+                return new ResponseEntity<User>(userR.save(user), HttpStatus.OK);
+            }
         }
         // precisa implementar um validador de email ja cadastrado, quantidade minima de caracters. A decidir com o grupo
     }
