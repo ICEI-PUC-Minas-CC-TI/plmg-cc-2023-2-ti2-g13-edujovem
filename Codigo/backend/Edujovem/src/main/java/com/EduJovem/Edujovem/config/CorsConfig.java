@@ -14,7 +14,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:5174") /* COLOCAR A URL QUE SEU REACT ESTA RODANDO AO DAR O NPM RUN DEV */
+                .allowedOrigins("http://localhost:5173") /* COLOCAR A URL QUE SEU REACT ESTA RODANDO AO DAR O NPM RUN DEV */
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("*");
     }
