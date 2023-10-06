@@ -1,28 +1,47 @@
 package com.EduJovem.Edujovem.controller;
-
+import com.EduJovem.Edujovem.model.RespostaModel;
 import com.EduJovem.Edujovem.model.User;
-import com.EduJovem.Edujovem.repository.UserRepository;
+import com.EduJovem.Edujovem.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserControler {
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
+    //Metodo teste
     @GetMapping("/hello")
     String hello() {
         return "Esta funcionando";
     }
-    @GetMapping("/users")
-    Iterable<User> listar() {
-        return userRepository.findAll();
+
+
+    //Rota de listagem de todos usuarios
+    @GetMapping("/userMostrar")
+    public Iterable<User> listar() {
+        return userService.listar();
     }
 
-    @PostMapping("/user")
-    User createUser(User user) {
-        return userRepository.save(user);
+    //Rota de cadastro de usuarios com informacoes validadas
+    @PostMapping("/userCadastrar")
+    public ResponseEntity<?> cadastrar(@RequestBody User user){
+        return userService.cadastrarAlterar(user, "cadastrar");
     }
+
+    //Rota para alterar usuarios com informacoes validadas
+    @PostMapping("/userAlterar")
+    public ResponseEntity<?> alterar(@RequestBody User user){
+        return userService.cadastrarAlterar(user, "alterar");
+    }
+
+    //Rota para remover usuarios
+    @DeleteMapping("/userRemover/{id}")
+    public ResponseEntity<RespostaModel> remover(@PathVariable Long id){
+        return userService.remover(id);
+    }
+
 }
