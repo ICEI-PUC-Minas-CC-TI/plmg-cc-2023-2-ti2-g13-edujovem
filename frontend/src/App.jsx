@@ -11,7 +11,7 @@ const App = () => {
     <div className="relative z-0 bg-white text-black font-montserrat font-semibold">
       
       <Hero/>
-      <Informational/>
+      
     </div>
     
     </BrowserRouter>
