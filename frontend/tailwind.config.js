@@ -19,6 +19,7 @@ module.exports = {
       },
       fontSize: {
         spct: "3vw",
+        sspct: "2vw",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
