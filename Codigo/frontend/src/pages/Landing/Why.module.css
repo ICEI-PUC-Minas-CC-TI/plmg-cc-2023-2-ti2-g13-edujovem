@@ -1,0 +1,17 @@
+.Why{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.WhyTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #0074cc;
+  }
+
+  .cards{
+    display: flex;
+    gap: 2rem;
+    padding: 3rem 7rem;
+  }

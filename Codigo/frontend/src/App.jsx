@@ -9,6 +9,8 @@ import NavBar from './components/NavBar'
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import Register from './pages/register/Register'
+import Landing from './pages/Landing/Landing'
+import Why from './pages/Landing/Why'
 
 function App() {
 
@@ -18,9 +20,11 @@ function App() {
       <div className="container">
         <NavBar />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Landing />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/why' element={<Why />} />
         </Routes>
       </div>
     </BrowserRouter>

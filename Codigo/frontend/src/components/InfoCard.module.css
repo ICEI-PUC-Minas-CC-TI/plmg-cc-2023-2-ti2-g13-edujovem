@@ -1,0 +1,13 @@
+.infoCard {
+    border: solid 1px #333;
+    border-radius: 1.5rem;
+    text-align: center;
+    padding: 2rem;
+}
+.infoCard h2 {
+    letter-spacing: 1px;
+}
+.infoCard p {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
