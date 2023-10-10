@@ -30,7 +30,7 @@ public class EduJovem {
 			Set<Role> roles = new HashSet<>();
 			roles.add(adminRole);
 
-			User admin = new User(1, "admin", passwordEncode.encode("password"), roles);
+			User admin = new User(1,"admin" ,"admin", "admin@admin.com", passwordEncode.encode("password"), roles);
 
 			userRepository.save(admin);
 		};
