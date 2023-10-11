@@ -26,6 +26,23 @@ const Register = () => {
         return
     }
     console.log(user)
+    const url = 'http://localhost:8080/auth/login'
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password
+      })
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
   };
 
   return (
@@ -51,7 +68,7 @@ const Register = () => {
             name="displayName"
             required
             placeholder="Digite seu nome"
-            value={displayName}
+            value={displayName || ""}
             onChange={(e) => setDisplayName(e.target.value)}
           />
         </label>
@@ -62,7 +79,7 @@ const Register = () => {
             name="email"
             required
             placeholder="Digite seu E-mail"
-            value={email}
+            value={email || ""}
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
@@ -73,7 +90,7 @@ const Register = () => {
             name="password"
             required
             placeholder="Digite sua senha"
-            value={password}
+            value={password || ""}
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
@@ -84,7 +101,7 @@ const Register = () => {
             name="confirmPassword"
             required
             placeholder="Confirme sua senha"
-            value={confirmPassword}
+            value={confirmPassword || ""}
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </label>

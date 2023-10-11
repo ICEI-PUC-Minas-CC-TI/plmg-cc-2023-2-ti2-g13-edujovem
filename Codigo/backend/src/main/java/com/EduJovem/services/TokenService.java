@@ -18,8 +18,8 @@ public class TokenService {
     @Autowired
     private JwtEncoder jwtEncoder;
 
-    // @Autowired
-    // private JwtDecoder jwtDecoder;
+    @Autowired
+    private JwtDecoder jwtDecoder;
 
     public String generateJwt(Authentication auth){
 
