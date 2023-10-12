@@ -23,7 +23,6 @@ const Login = () => {
       return
     }
     login(username, password)
-    console.log(user)
   };
 
   return (

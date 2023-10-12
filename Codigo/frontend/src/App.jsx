@@ -17,7 +17,7 @@ import { AuthContextProvider, AuthContext } from './context/AuthContext'
 
 function App() {
 
-  const Private = ({children}) => {
+  const Private = ({ children }) => {
     const {authenticated, loading} = useContext(AuthContext)
 
     if(loading){
