@@ -1,0 +1,20 @@
+.expense{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+}
+.expense .content{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+   font-size: 1.2rem;
+   font-weight: 500;
+}
+.complete {
+   background-color: #5cb85c;
+}
+.remove {
+   background-color: #d9534f;
+}

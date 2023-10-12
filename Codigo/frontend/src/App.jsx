@@ -12,9 +12,11 @@ import Register from './pages/register/Register'
 import Landing from './pages/Landing/Landing'
 import Why from './pages/Landing/Why'
 import Profile from './pages/profile/Profile'
+import Caderninho from './pages/caderninho/Caderninho'
 
-// Context
+
 import { AuthContextProvider, AuthContext } from './context/AuthContext'
+
 
 function App() {
 
@@ -45,6 +47,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/why' element={<Why />} />
           <Route path='/profile' element={<Private><Profile /></Private>} />
+          <Route path='/caderninho' element={<Private><Caderninho /></Private>} />
         </Routes>
         </AuthContextProvider>
       </div>

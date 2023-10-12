@@ -24,6 +24,18 @@ const NavBar = () => {
                   Home
                </NavLink>
             </li>
+            {authenticated && (
+               <li>
+                  <NavLink
+                     to="/caderninho"
+                     className={({ isActive }) =>
+                        isActive ? styles.active : ""
+                     }
+                  >
+                     Caderninho
+                  </NavLink>
+               </li>
+            )}
             <li>
                {!authenticated ? (
                   <NavLink
@@ -45,6 +57,7 @@ const NavBar = () => {
                   </NavLink>
                )}
             </li>
+            
             <li>
                {!authenticated ? (
                   <NavLink
@@ -59,6 +72,7 @@ const NavBar = () => {
                   <button onClick={handleLogout}>Sair</button>
                )}
             </li>
+            
          </ul>
       </nav>
    );
