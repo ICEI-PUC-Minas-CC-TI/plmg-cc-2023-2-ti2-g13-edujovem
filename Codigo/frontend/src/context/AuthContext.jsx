@@ -20,19 +20,20 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   const login = async(username, password) => {
-
+    console.log("login");
     const res = await createSession(username, password)
-    console.log("login", res.data)
-    const userLogged = res.data
-    const token = res.data.token
-    localStorage.setItem("user", JSON.stringify(userLogged));
-    localStorage.setItem("jwt", token);
-
-    api.defaults.Authorization = `Bearer ${token}`
-
-    setUser(userLogged);
-
-    navigate("/home");
+    
+    if(res.data.jwt){
+      const userLogged = res.data
+      const token = res.data.token
+      localStorage.setItem("user", JSON.stringify(userLogged));
+      localStorage.setItem("jwt", token);
+      api.defaults.Authorization = `Bearer ${token}`
+      setUser(userLogged);
+      navigate("/home");
+    }else{
+      alert("incorreto")
+    }
   };
 
   const logout = () => {

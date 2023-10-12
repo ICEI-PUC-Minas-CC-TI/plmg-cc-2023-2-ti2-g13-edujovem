@@ -1,28 +1,23 @@
 import styles from './login.module.css'
-import { useState, useEffect, useContext } from "react";
+import { useState } from "react";
 
-// CONTEXT
-import { AuthContext } from '../../context/AuthContext';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 
 const Login = () => {
 
-  const {authenticated, login} = useContext(AuthContext)
+  const {authenticated, login} = useAuthContext()
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const user = {
-      username,
-      password,
+    const user = { 
+      username: username,
+      password: password,
     }
-    if(password.length < 3){
-      alert('senha muito pequena')
-      return
-    }
-    login(username, password)
+    login(user)
   };
 
   return (

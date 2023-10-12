@@ -11,6 +11,7 @@ import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 import Landing from './pages/Landing/Landing'
 import Why from './pages/Landing/Why'
+import Profile from './pages/profile/Profile'
 
 // Context
 import { AuthContextProvider, AuthContext } from './context/AuthContext'
@@ -35,14 +36,15 @@ function App() {
     <div className="app">
     <BrowserRouter>
       <div className="container">
-        <NavBar />
           <AuthContextProvider>
+        <NavBar />
         <Routes>
             <Route path='/' element={<Landing />} />
             <Route path='/home' element={<Private><Home /></Private>} />
             <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/why' element={<Why />} />
+          <Route path='/profile' element={<Private><Profile /></Private>} />
         </Routes>
         </AuthContextProvider>
       </div>

@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
+// SERVICES
+import { createUserAccount } from "../../../services/api";
 // CSS
 import styles from './Register.module.css'
+// HOOKS
+import { useAuthContext } from "../../hooks/useAuthContext";
+
 
 const Register = () => {
+  const {login} = useAuthContext()
   const [username, setUsername] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
@@ -10,39 +16,21 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("")
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    setError("") 
-    const user = { // forma os usuarios com base nos inputs
-        username,
-        displayName,
-        email,
-        password,
-        confirmPassword,
+    setError("")
+    const user = {
+      username: username,
+      displayName: displayName,
+      email: email,
+      password: password,
     }
-    // 1) validacao
-    if(password !== confirmPassword) {
-        setError("As senhas precisam ser iguais")
-        return
+    // falta as validacoes de senha
+    
+    const res = await createUserAccount(user)
+    if(res){
+      login(user)
     }
-    console.log(user)
-    const url = 'http://localhost:8080/auth/login'
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        username: username,
-        password: password
-      })
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-      })
   };
 
   return (

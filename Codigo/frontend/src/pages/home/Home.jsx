@@ -1,20 +1,18 @@
 import React from 'react'
-import { useContext, useState } from 'react'
-// CONTEXT
-import { AuthContext } from '../../context/AuthContext'
+import { useState } from 'react'
+
+// HOOKS
+import { useAuthContext } from '../../hooks/useAuthContext'
 
 const Home = () => {
-  const { logout, authenticated } = useContext(AuthContext)
+  const { logout, authenticated } = useAuthContext()
 
-  const handleLogout = () => {
-    logout()
-  }
+  
 
   return (
     <div>
       <h1>Home page</h1>
       <p>{String(authenticated)}</p>
-      <button onClick={handleLogout}>Logout</button>
     </div>
   )
 }
