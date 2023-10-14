@@ -10,25 +10,25 @@ const Caderninho = () => {
    const [expenses, setExpenses] = useState([
       {
          id: 1,
-         value: 34.9,
+         valueInput: 34.9,
          text: "picanha norueguesa",
          category: "Guloseimas",
          isCompleted: false,
       },
       {
          id: 2,
-         value: 122.9,
+         valueInput: 122.9,
          text: "andei de cavalo",
          category: "exercicio",
          isCompleted: false,
       },
    ]);
-   const addExpense = (value, text, category) => {
+   const addExpense = (valueInput, text, category) => {
       const newExpenses = [
          ...expenses,
          {
             id: Math.floor(Math.random() * 10000),
-            value,
+            valueInput,
             text,
             category,
             isCompleted: false,

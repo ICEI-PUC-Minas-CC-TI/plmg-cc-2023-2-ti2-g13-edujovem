@@ -2,14 +2,14 @@ import { useState } from "react";
 import styles from "./ExpenseForm.module.css";
 
 const ExpenseForm = ({ addExpense }) => {
-   const [value, setValue] = useState();
+   const [valueInput, setValueInput] = useState("");
    const [text, setText] = useState("");
    const [category, setCategory] = useState("");
 
    const handleSubmit = (e) => {
       e.preventDefault();
-      if (!value || !text) return;
-      addExpense(value, text, category);
+      if (!valueInput || !text) return;
+      addExpense(valueInput, text, category);
       setValue();
       setText("");
       setCategory("");
@@ -21,10 +21,10 @@ const ExpenseForm = ({ addExpense }) => {
          <form onSubmit={handleSubmit}>
             <label>
                <input
-                  type="number"
+                  type="text"
                   placeholder="R$:"
-                  value={value}
-                  onChange={(e) => setValue(e.target.value)}
+                  value={valueInput}
+                  onChange={(e) => setValueInput(e.target.value)}
                />
             </label>
             <label>
