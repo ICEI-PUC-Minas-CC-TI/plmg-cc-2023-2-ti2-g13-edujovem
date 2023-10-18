@@ -2,7 +2,6 @@ package com.EduJovem.services;
 
 // import java.util.HashSet;
 // import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,7 +14,7 @@ import org.springframework.stereotype.Service;
 import com.EduJovem.repository.UserRepository;
 
 @Service
-public class UserService implements UserDetailsService {
+public class UserDatailsService implements UserDetailsService {
 
     // @Autowired
     // private PasswordEncoder encoder;
@@ -30,5 +29,7 @@ public class UserService implements UserDetailsService {
 
         return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("user is not valid"));
     }
+
+    
 
 }
