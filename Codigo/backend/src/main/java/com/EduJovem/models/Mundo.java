@@ -10,16 +10,16 @@ public class Mundo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer ID;
-    private String nome;
+    private String name;
 
-    @OneToMany
-    private List<Nivel> niveis;
+    //@OneToMany
+    //private List<Nivel> niveis;
     public String getNome() {
-        return nome;
+        return name;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.name = nome;
     }
 
     public Integer getID() {

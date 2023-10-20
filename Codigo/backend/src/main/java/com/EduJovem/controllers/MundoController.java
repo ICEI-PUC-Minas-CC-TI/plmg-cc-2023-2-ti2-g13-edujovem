@@ -10,11 +10,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/mundo")
+@RequestMapping("/auth")
+@CrossOrigin("*")
 //@CrossOrigin("*")
 public class MundoController {
 
-    @GetMapping("/")
+    @GetMapping("/testehallomundo")
     public String helloMundoController(){
         return "Mundo access level";
     }
@@ -22,7 +23,7 @@ public class MundoController {
     @Autowired
     private MundoService mundoService;
 
-    @PostMapping("/add")
+    @PostMapping("/addmundo")
     public ResponseEntity<?> addMundo(@RequestBody Mundo mundo){
         return mundoService.addMundo(mundo);
     }

@@ -57,6 +57,7 @@ public class SecurityConfiguration {
                 auth.requestMatchers("/auth/**").permitAll();
                 auth.requestMatchers("/admin/**").hasRole("ADMIN");
                 auth.requestMatchers("/user/**").hasAnyRole("ADMIN", "USER");
+                auth.requestMatchers("/addmundo/**").hasAnyRole("ADMIN"); // conferir com o thon dps isso msm
                 auth.anyRequest().authenticated();
             });
             
