@@ -45,16 +45,16 @@ public class AuthenticationService {
 
     public ResponseEntity<?> registerUser(String name, String username, String email, String password){
 
-        if(name.isEmpty()){
+        if(name.equals("")){
             mensagem.setMensagem("Nome não pode ser vazio");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
-        } else if(username.isEmpty()){
+        } else if(username.equals("")){
             mensagem.setMensagem("Username não pode ser vazio");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
-        } else if(email.isEmpty()){
+        } else if(email.equals("")){
             mensagem.setMensagem("Email não pode ser vazio");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
-        } else if(password.isEmpty()){
+        } else if(password.equals("")){
             mensagem.setMensagem("Senha não pode ser vazia");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
         } else if(userRepository.findByUsername(username).isPresent()){
@@ -91,7 +91,7 @@ public class AuthenticationService {
         }
     }
     public ResponseEntity<?> addMundo(Mundo mundo){
-        if(mundo.getNome().isEmpty()){
+        if(mundo.getName().equals("")){
             mensagem.setMensagem("Nome não pode ser vazio");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
         } else{

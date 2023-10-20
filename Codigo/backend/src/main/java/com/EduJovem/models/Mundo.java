@@ -14,11 +14,11 @@ public class Mundo {
 
     //@OneToMany
     //private List<Nivel> niveis;
-    public String getNome() {
+    public String getName() {
         return name;
     }
 
-    public void setNome(String nome) {
+    public void setName(String nome) {
         this.name = nome;
     }
 
