@@ -3,7 +3,8 @@ package com.EduJovem.services;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.EduJovem.models.Mensagem;
+import com.EduJovem.models.*;
+import com.EduJovem.repository.MundoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +16,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.EduJovem.models.LoginResponseDTO;
-import com.EduJovem.models.Role;
-import com.EduJovem.models.User;
 import com.EduJovem.repository.RoleRepository;
 import com.EduJovem.repository.UserRepository;
 
@@ -42,6 +40,8 @@ public class AuthenticationService {
 
     @Autowired
     private Mensagem mensagem;
+    @Autowired
+    private MundoRepository mundoRepository;
 
     public ResponseEntity<?> registerUser(String name, String username, String email, String password){
 
@@ -73,8 +73,6 @@ public class AuthenticationService {
 
             return new ResponseEntity<>(userRepository.save(new User(0, name, username, email, encodedPassword, authorities)), HttpStatus.CREATED);
         }
-
-
     }
 
     public LoginResponseDTO loginUser(String username, String password){
@@ -92,5 +90,16 @@ public class AuthenticationService {
             return new LoginResponseDTO(null, "");
         }
     }
+    public ResponseEntity<?> addMundo(Mundo mundo){
+        if(mundo.getNome().isEmpty()){
+            mensagem.setMensagem("Nome não pode ser vazio");
+            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+        } else{
+            return new ResponseEntity<>(mundoRepository.save(mundo), HttpStatus.OK);
+        }
+
+    }
+
+
 
 }
