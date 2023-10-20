@@ -1,6 +1,7 @@
 package com.EduJovem.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +22,7 @@ public class AuthenticationController {
     private AuthenticationService authenticationService;
 
     @PostMapping("/register")
-    public User registerUser(@RequestBody RegistrationDTO body){
+    public ResponseEntity<?> registerUser(@RequestBody RegistrationDTO body){
         return authenticationService.registerUser(body.getName(), body.getUsername(), body.getEmail(), body.getPassword());
     }
     
