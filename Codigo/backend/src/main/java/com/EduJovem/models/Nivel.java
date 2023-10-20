@@ -9,7 +9,7 @@ public class Nivel {
     private Integer ID;
 
     private int numero;
-    private Integer pontuacoa;
+    private Integer pontuacao;
     @ManyToOne
     private Mundo mundo;
 
@@ -29,12 +29,12 @@ public class Nivel {
         this.numero = numero;
     }
 
-    public Integer getPontuacoa() {
-        return pontuacoa;
+    public Integer getPontuacao() {
+        return pontuacao;
     }
 
-    public void setPontuacoa(Integer pontuacoa) {
-        this.pontuacoa = pontuacoa;
+    public void setPontuacao(Integer pontuacao) {
+        this.pontuacao = pontuacao;
     }
 
     public Mundo getMundo() {

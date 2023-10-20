@@ -35,7 +35,7 @@ public class AdminController {
     }
 
     @GetMapping("/users/{id}")
-    public Optional<User> getUser(@PathVariable Integer id){
+    public User getUser(@PathVariable Integer id){
         return userAdminService.getUser(id);
     }
 

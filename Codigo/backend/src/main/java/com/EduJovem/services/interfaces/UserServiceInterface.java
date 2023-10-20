@@ -7,7 +7,7 @@ import com.EduJovem.models.User;
 
 public interface UserServiceInterface {
     List<User> getAllUsers();
-    Optional<User> getUser(Integer id);
+    User getUser(Integer id);
     ResponseEntity<Void> deleteUser(Integer id);
     public ResponseEntity<User> updateUser(Integer id, User updateUser);
 }
