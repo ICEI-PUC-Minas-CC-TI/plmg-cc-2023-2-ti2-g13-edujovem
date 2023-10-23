@@ -60,6 +60,7 @@ public class SecurityConfiguration {
                 auth.requestMatchers("/expenses/**").hasAnyRole("ADMIN", "USER");
                 auth.requestMatchers("/mundo/addmundo").hasRole("ADMIN");
                 auth.requestMatchers("/nivel/addnivel").hasRole("ADMIN");
+                auth.requestMatchers("/expenses/addExpnese").hasRole("ADMIN");
                 auth.anyRequest().authenticated();
             });
             

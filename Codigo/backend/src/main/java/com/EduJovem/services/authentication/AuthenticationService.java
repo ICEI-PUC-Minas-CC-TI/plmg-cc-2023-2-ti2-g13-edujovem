@@ -5,8 +5,7 @@ import java.util.Set;
 
 import com.EduJovem.models.*;
 import com.EduJovem.models.payload.LoginResponseDTO;
-import com.EduJovem.repository.MundoRepository;
-import com.EduJovem.repository.NivelRepository;
+import com.EduJovem.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +16,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.EduJovem.repository.RoleRepository;
-import com.EduJovem.repository.UserRepository;
 
 @Service
 @Transactional
@@ -46,6 +42,8 @@ public class AuthenticationService {
     private MundoRepository mundoRepository;
     @Autowired
     private NivelRepository nivelRepository;
+    @Autowired
+    private ExpenseRepository expRepository;
 
     public ResponseEntity<?> registerUser(String name, String username, String email, String password){
 
@@ -114,6 +112,9 @@ public class AuthenticationService {
         } else{
             return new ResponseEntity<>(nivelRepository.save(nivel), HttpStatus.OK);
         }
+    }
+    public ResponseEntity<?> addExpenses(Expense exp){
+        return new ResponseEntity<>(expRepository.save(exp), HttpStatus.OK);
     }
 
 }

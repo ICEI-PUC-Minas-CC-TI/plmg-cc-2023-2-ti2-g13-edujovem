@@ -26,7 +26,7 @@ public class ExpenseController {
 		return expenseService.getAll();
 	}
 
-    @PostMapping("/add")
+    @PostMapping("/addExpenses")
     public ResponseEntity<?> addExpense(@RequestBody Expense exp){
         return expenseService.addExpense(exp);
     }
