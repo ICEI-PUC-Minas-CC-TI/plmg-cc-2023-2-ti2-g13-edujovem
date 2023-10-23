@@ -32,7 +32,7 @@ public class MundoController {
         return mundoService.addMundo(mundo);
     }
 
-    @PostMapping("/mundos")
+    @GetMapping("/mundos")
     public List<Mundo> getAllMundos(){
         return mundoService.getAllMundos();
     }
