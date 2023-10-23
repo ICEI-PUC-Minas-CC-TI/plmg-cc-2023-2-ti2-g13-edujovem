@@ -20,7 +20,7 @@ public class Expense {
 
     private Instant moment;
     private String description;
-    private ExpenseCategory category;
+    private Integer category;
     private Double value;
 
     @ManyToOne
@@ -35,7 +35,7 @@ public class Expense {
         this.id = id;
         this.moment = moment;
         this.description = description;
-        this.category = category;
+        setCategory(category);
         this.value = value;
     }
 
@@ -69,14 +69,14 @@ public class Expense {
         this.description = description;
     }
 
-
     public ExpenseCategory getCategory() {
-        return category;
+        return ExpenseCategory.valueOf(category);
     }
 
-
     public void setCategory(ExpenseCategory category) {
-        this.category = category;
+        if(category != null) {
+            this.category = category.getCode();
+        }
     }
 
 
