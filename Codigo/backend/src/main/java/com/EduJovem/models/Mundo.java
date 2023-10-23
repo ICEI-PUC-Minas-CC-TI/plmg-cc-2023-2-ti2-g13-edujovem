@@ -2,18 +2,28 @@ package com.EduJovem.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@Entity
+@Table(name="mundos")
 public class Mundo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer ID;
     private String name;
+    private String theme;
 
-    //@OneToMany
-    //private List<Nivel> niveis;
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
+
+    @JsonIgnore
+    @OneToMany(mappedBy="mundo")
+    private List<Nivel> niveis = new ArrayList<>();
+
     public String getName() {
         return name;
     }
@@ -28,6 +38,12 @@ public class Mundo {
 
     public void setID(Integer ID) {
         this.ID = ID;
+    }
+    public String getTheme() {
+        return theme;
+    }
+    public void setTheme(String tema) {
+        this.theme = tema;
     }
 
 

@@ -4,12 +4,17 @@ import java.time.Instant;
 
 import com.EduJovem.models.enums.ExpenseCategory;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
+
+@Entity
+@Table(name="expenses")
 public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,6 +25,10 @@ public class Expense {
     private ExpenseCategory category;
     private Double value;
 
+
+    @ManyToOne
+    @JoinColumn(name="caderno_id")
+    private Caderno caderno;
 
     public Expense(){
     }

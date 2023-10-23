@@ -3,22 +3,25 @@ package com.EduJovem.models;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name="niveis")
 public class Nivel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer ID;
-
+    private Integer id;
     private int numero;
     private Integer pontuacao;
+
+    // n niveis tem um mundo
     @ManyToOne
+    @JoinColumn(name="mundo_id")
     private Mundo mundo;
 
-    public Integer getID() {
-        return ID;
+    public Integer getId() {
+        return id;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public int getNumero() {
@@ -37,11 +40,5 @@ public class Nivel {
         this.pontuacao = pontuacao;
     }
 
-    public Mundo getMundo() {
-        return mundo;
-    }
-
-    public void setMundo(Mundo mundo) {
-        this.mundo = mundo;
-    }
+    
 }
