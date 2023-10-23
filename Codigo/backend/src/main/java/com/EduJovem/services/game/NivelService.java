@@ -1,4 +1,4 @@
-package com.EduJovem.services;
+package com.EduJovem.services.game;
 
 import com.EduJovem.repository.NivelRepository;
 import org.springframework.beans.factory.annotation.Autowired;

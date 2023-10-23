@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.EduJovem.models.LoginResponseDTO;
-import com.EduJovem.models.RegistrationDTO;
 import com.EduJovem.models.User;
-import com.EduJovem.services.AuthenticationService;
+import com.EduJovem.models.payload.LoginResponseDTO;
+import com.EduJovem.models.payload.RegistrationDTO;
+import com.EduJovem.services.authentication.AuthenticationService;
 
 @RestController
 @RequestMapping("/auth")

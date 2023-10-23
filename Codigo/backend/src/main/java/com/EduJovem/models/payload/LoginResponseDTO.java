@@ -1,4 +1,6 @@
-package com.EduJovem.models;
+package com.EduJovem.models.payload;
+
+import com.EduJovem.models.User;
 
 public class LoginResponseDTO {
     private User user;

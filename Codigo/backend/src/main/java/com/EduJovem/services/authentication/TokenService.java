@@ -1,4 +1,4 @@
-package com.EduJovem.services;
+package com.EduJovem.services.authentication;
 
 import java.time.Instant;
 import java.util.stream.Collectors;

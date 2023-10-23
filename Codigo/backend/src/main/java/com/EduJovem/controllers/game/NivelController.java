@@ -1,4 +1,4 @@
-package com.EduJovem.controllers;
+package com.EduJovem.controllers.game;
 
 
 import org.springframework.web.bind.annotation.GetMapping;

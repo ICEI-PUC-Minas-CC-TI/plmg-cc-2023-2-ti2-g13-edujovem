@@ -1,9 +1,10 @@
-package com.EduJovem.services;
+package com.EduJovem.services.authentication;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import com.EduJovem.models.*;
+import com.EduJovem.models.payload.LoginResponseDTO;
 import com.EduJovem.repository.MundoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

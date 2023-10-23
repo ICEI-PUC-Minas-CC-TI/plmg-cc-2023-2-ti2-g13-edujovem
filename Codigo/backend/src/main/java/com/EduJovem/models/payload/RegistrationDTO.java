@@ -1,4 +1,4 @@
-package com.EduJovem.models;
+package com.EduJovem.models.payload;
 
 public class RegistrationDTO {
     private String name;
