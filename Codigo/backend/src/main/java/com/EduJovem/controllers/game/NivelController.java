@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/nivel")
 public class NivelController {
@@ -22,6 +24,11 @@ public class NivelController {
     @PostMapping("/addnivel")
     public ResponseEntity<?> addNivel(@RequestBody Nivel nivel){
         return nivelService.addNivel(nivel);
+    }
+
+    @GetMapping("/niveis")
+    public List<Nivel> getAllNiveis(){
+        return nivelService.getAllNiveis();
     }
 
 }
