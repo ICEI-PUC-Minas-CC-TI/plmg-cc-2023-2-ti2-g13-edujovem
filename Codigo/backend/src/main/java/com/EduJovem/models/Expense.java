@@ -11,7 +11,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-
+@Entity
+@Table(name="expenses")
 public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,6 +23,9 @@ public class Expense {
     private ExpenseCategory category;
     private Double value;
 
+    @ManyToOne
+    @JoinColumn(name="caderno_id")
+    private Caderno caderno;
 
     public Expense(){
     }

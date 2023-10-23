@@ -1,12 +1,10 @@
-package com.EduJovem.services.authentication;
+package com.EduJovem.services;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import com.EduJovem.models.*;
-import com.EduJovem.models.payload.LoginResponseDTO;
 import com.EduJovem.repository.MundoRepository;
-import com.EduJovem.repository.NivelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -44,8 +42,6 @@ public class AuthenticationService {
     private Mensagem mensagem;
     @Autowired
     private MundoRepository mundoRepository;
-    @Autowired
-    private NivelRepository nivelRepository;
 
     public ResponseEntity<?> registerUser(String name, String username, String email, String password){
 
@@ -83,7 +79,7 @@ public class AuthenticationService {
 
         try{
             Authentication auth = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(username, password)
+                new UsernamePasswordAuthenticationToken(username, password)
             );
 
             String token = tokenService.generateJwt(auth);
@@ -98,22 +94,12 @@ public class AuthenticationService {
         if(mundo.getName().equals("")){
             mensagem.setMensagem("Nome não pode ser vazio");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
-        } else if (mundoRepository.findByName(mundo.getName()).isPresent()) {
-            mensagem.setMensagem("Nome já cadastrado");
-            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
         } else{
             return new ResponseEntity<>(mundoRepository.save(mundo), HttpStatus.OK);
         }
 
     }
 
-    public ResponseEntity<?> addNivel(Nivel nivel){
-        if(nivelRepository.findByNumero(nivel.getNumero()).isPresent()){
-            mensagem.setMensagem("Número já cadastrado");
-            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
-        } else{
-            return new ResponseEntity<>(nivelRepository.save(nivel), HttpStatus.OK);
-        }
-    }
+
 
 }
