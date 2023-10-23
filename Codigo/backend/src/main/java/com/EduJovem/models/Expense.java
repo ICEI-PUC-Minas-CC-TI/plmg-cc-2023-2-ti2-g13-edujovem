@@ -1,24 +1,29 @@
 package com.EduJovem.models;
 
 import java.time.Instant;
-
 import com.EduJovem.models.enums.ExpenseCategory;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+@Entity
 public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private Instant moment;
-    private String Description;
+    private String description;
     private ExpenseCategory category;
     private Double value;
+
+    @ManyToOne
+    @JoinColumn(name = "expense_id")
+    Notebook notebook;
 
 
     public Expense(){
@@ -28,7 +33,7 @@ public class Expense {
     public Expense(Integer id, Instant moment, String description, ExpenseCategory category, Double value) {
         this.id = id;
         this.moment = moment;
-        Description = description;
+        this.description = description;
         this.category = category;
         this.value = value;
     }
@@ -55,12 +60,12 @@ public class Expense {
 
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
 
