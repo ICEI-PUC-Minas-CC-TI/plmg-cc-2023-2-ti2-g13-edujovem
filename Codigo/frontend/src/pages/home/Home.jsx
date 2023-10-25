@@ -64,7 +64,7 @@ const Home = () => {
                   flex justify-center items-center uppercase tracking-normal transition-colors 
                   duration-150 text-base py-2 px-4 w-[32%] rounded-md'
                   
-                >
+                  onClick={handleLogout}>
                   <img src={Sair} alt="sair" />
                 </div>
                 <div className='
