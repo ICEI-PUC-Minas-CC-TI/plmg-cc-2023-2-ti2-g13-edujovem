@@ -8,6 +8,7 @@ import Configuracoes from '../../assets/configuracoes.png';
 import Calculadora from '../../assets/calculadora.png';
 import CalcJuros from '../../assets/calcJuros.png';
 
+
 // HOOKS
 import { useAuthContext } from '../../hooks/useAuthContext'
 
@@ -53,7 +54,7 @@ const Home = () => {
                 <div className='border-r-2 h-full py-2 pr-3'>
                   <img src={CalcJuros} alt="calculadora juros" />
                 </div>
-                <h1 className='pl-3'>Calculadora de jurosl</h1>
+                <h1 className='pl-3'>Calculadora de juros</h1>
               </div>
             </div>
             <div className='relative w-full h-[20%] rounded-md flex flex-col justify-end pb-1'>
@@ -96,7 +97,7 @@ const Home = () => {
                 <h1 className='text-2xl font-bold'>Mundos</h1>
               </div>
               <div className='relative w-full h-[90%]'>
-                asasaassassasasadadadadadadadad
+                
               </div>
             </div>
           </MouseHoverBox>
