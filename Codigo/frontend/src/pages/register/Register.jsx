@@ -20,8 +20,8 @@ const Register = () => {
     e.preventDefault();
     setError("")
     const user = {
+      name: displayName,
       username: username,
-      displayName: displayName,
       email: email,
       password: password,
     }
