@@ -1,16 +1,12 @@
 import { useState, useContext } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
-// CSS
-import './App.css'
 
 // PAGES
-import NavBar from './components/NavBar'
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 import Landing from './pages/Landing/Landing'
-import Why from './pages/Landing/Why'
 import Profile from './pages/profile/Profile'
 import Caderninho from './pages/caderninho/Caderninho'
 
@@ -37,15 +33,15 @@ function App() {
   return (
     <div className="app">
     <BrowserRouter>
-      <div className="container">
+      <div className="">
           <AuthContextProvider>
-        <NavBar />
+        
         <Routes>
             <Route path='/' element={<Landing />} />
             <Route path='/home' element={<Private><Home /></Private>} />
             <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/why' element={<Why />} />
+          
           <Route path='/profile' element={<Private><Profile /></Private>} />
           <Route path='/caderninho' element={<Private><Caderninho /></Private>} />
         </Routes>

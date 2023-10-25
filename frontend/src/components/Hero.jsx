@@ -1,6 +1,4 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { styles } from '../styles'
 import Earth from './canvas/Earth'
 import Button from './Button'
 import bgVideo from '../assets/contmoney.mp4'
