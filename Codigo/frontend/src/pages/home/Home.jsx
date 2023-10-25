@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 import { useState } from 'react';
 import Button from "../../components/Button";
 import MouseHoverBox from '../../components/MouseHoverBox';
@@ -58,7 +59,6 @@ const Home = () => {
             </div>
             <div className='relative w-full h-[20%] rounded-md flex flex-col justify-end pb-1'>
               <div className='flex inline-flex items-center gap-x-4'>
-
                 <div className='
                   bg-[#A2A2A2] text-white font-bold hover:bg-[#D66F00] h-[110%] 
                   flex justify-center items-center uppercase tracking-normal transition-colors 
@@ -67,13 +67,16 @@ const Home = () => {
                   onClick={handleLogout}>
                   <img src={Sair} alt="sair" />
                 </div>
+                
                 <div className='
                   bg-[#A2A2A2] text-white font-bold hover:bg-[#D66F00] h-[110%] 
                   flex justify-center items-center uppercase tracking-normal transition-colors 
                   duration-150 text-base py-2 px-4 w-[32%] rounded-md'
                   
                 >
+                  <NavLink to="/profile" >
                   <img src={Conta} alt="conta" />
+                  </NavLink>
                 </div>
                 <div className='
                   bg-[#A2A2A2] text-white font-bold hover:bg-[#D66F00] h-[110%] 

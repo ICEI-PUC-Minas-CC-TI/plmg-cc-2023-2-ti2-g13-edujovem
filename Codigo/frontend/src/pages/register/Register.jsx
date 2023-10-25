@@ -26,6 +26,10 @@ const Register = () => {
       password: password,
     }
     // falta as validacoes de senha
+    if(password != confirmPassword){
+      alert("as senhas precisam ser iguais!")
+      return
+    }
     
     const res = await createUserAccount(user)
     if(res){
