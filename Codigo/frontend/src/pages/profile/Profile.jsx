@@ -12,7 +12,6 @@ const Profile = () => {
          <NavLink to="/home">
             <Button>Sair</Button>
          </NavLink>
-
          <RendaForm />
       </div>
    );

@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+// COMPONENTS
 import Button from "../../components/Button";
+
 // SERVICES
 import { createUserAccount } from "../../../services/api";
 
