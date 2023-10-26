@@ -65,7 +65,7 @@ const Login = () => {
                   <Button intent={"emphasis1"} roundness={"round"} size={"one"}>
                      Entrar
                   </Button>
-               <NavLink to="/home" >
+               <NavLink to="/" >
                   <button className="mt-1 bg-gray-400 hover:bg-gray-600 text-white px-4 py-2 rounded"><IoIosArrowBack /></button>
                </NavLink>
                </form>
