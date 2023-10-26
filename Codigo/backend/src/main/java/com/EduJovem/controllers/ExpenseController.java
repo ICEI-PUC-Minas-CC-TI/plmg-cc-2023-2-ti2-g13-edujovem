@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.EduJovem.models.Expense;
+import com.EduJovem.models.User;
 import com.EduJovem.services.ExpenseServices;
 
 @RestController
@@ -22,12 +23,14 @@ public class ExpenseController {
 
     
     @GetMapping("/getAll")
-    public List<Expense> getAll() {
-		return expenseService.getAll();
-	}
+    public ResponseEntity<List<Expense>> getAllExpenses(@RequestBody User user) {
+        List<Expense> expenses = expenseService.getExpensesByUser(user);
+        return ResponseEntity.ok(expenses);
+    }
 
     @PostMapping("/addExpenses")
-    public ResponseEntity<?> addExpense(@RequestBody Expense exp){
-        return expenseService.addExpense(exp);
+    public ResponseEntity<Expense> addExpense(@RequestBody Expense expense, @RequestBody User user) {
+        Expense savedExpense = expenseService.addExpenseToUser(user, expense);
+        return ResponseEntity.ok(savedExpense);
     }
 }

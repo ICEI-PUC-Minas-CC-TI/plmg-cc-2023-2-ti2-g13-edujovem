@@ -21,7 +21,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -52,8 +51,8 @@ public class User implements UserDetails{
 	private List<Mundo> mundos = new ArrayList<>();
 
 	@JsonIgnore
-	@OneToMany(mappedBy="user")
-	private List<Caderno> caderno = new ArrayList<>();
+	@OneToMany(mappedBy = "user")
+	private List<Expense> expenses = new ArrayList<>();
 
 
     public User() {

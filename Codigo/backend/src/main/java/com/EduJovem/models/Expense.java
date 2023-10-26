@@ -24,8 +24,10 @@ public class Expense {
     private Double value;
 
     @ManyToOne
-    @JoinColumn(name="caderno_id")
-    private Caderno caderno;
+    @JoinColumn(name = "user_id")
+    private User user;
+
+   
 
     public Expense(){
     }
@@ -87,6 +89,21 @@ public class Expense {
 
     public void setValue(Double value) {
         this.value = value;
+    }
+
+
+    public void setCategory(Integer category) {
+        this.category = category;
+    }
+
+
+    public User getUser() {
+        return user;
+    }
+
+
+    public void setUser(User user) {
+        this.user = user;
     }
     
     
