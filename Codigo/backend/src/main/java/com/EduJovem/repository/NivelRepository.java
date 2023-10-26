@@ -10,6 +10,6 @@ import java.util.Optional;
 @Repository
 public interface NivelRepository extends JpaRepository<Nivel, Integer> {
 
-    Optional<Nivel> findByNumero(Integer number);
-
+    Optional<Nivel> findByNumero(int number);
+    Optional<Nivel> findById(Integer id);
 }

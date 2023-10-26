@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface MundoRepository extends JpaRepository<Mundo, Integer> {
 
     Optional<Mundo> findByName(String name);
-
+    Optional<Mundo> findById(Integer id);
 }

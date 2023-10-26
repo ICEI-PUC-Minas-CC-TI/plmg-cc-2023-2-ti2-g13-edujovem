@@ -3,6 +3,8 @@ package com.EduJovem.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import com.EduJovem.models.Mundo;
+import com.EduJovem.models.Nivel;
 import com.EduJovem.services.game.MundoService;
 import com.EduJovem.services.game.NivelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,12 +47,12 @@ public class AdminController {
         return userAdminService.getUser(id);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/deleteuser/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Integer id){
         return userAdminService.deleteUser(id);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/updateuser/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User updatedUser){
         return userAdminService.updateUser(id, updatedUser);
     }
@@ -62,5 +64,13 @@ public class AdminController {
     public ResponseEntity<Void> deleteNivel(@PathVariable Integer id){
         return nivelService.deleteNivel(id);
     }
-    
+
+    @PutMapping("/updateMundo/{id}")
+    public ResponseEntity<Mundo> updatedMundo(@PathVariable Integer id, @RequestBody Mundo updatedMundo){
+        return mundoService.updateMundo(id, updatedMundo);
+    }
+    @PutMapping("/updatenivel/{id}")
+    public ResponseEntity<Nivel> updateNivel(@PathVariable Integer id, @RequestBody Nivel updateNivel){
+        return nivelService.updateNivel(id, updateNivel);
+    }
 }
