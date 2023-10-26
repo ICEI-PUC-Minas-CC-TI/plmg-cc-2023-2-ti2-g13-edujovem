@@ -17,7 +17,7 @@ export default function MouseHoverBox({ borderColor, children }) {
         setRotation(angle);
         
     };
-    
+
 
     useEffect(() => {
         document.addEventListener('mousemove', handleMouseMove);
