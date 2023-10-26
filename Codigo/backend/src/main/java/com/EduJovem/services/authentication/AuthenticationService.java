@@ -45,6 +45,10 @@ public class AuthenticationService {
     @Autowired
     private ExpenseRepository expRepository;
 
+    public static ResponseEntity<?> addDispesa(Expense expense) {
+        return new ResponseEntity<>(expense, HttpStatus.OK);
+    }
+
     public ResponseEntity<?> registerUser(String name, String username, String email, String password){
 
         if(name.equals("")){

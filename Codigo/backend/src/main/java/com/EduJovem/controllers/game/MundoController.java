@@ -19,13 +19,14 @@ import java.util.List;
 
 public class MundoController {
 
+    @Autowired
+    private MundoService mundoService;
     @GetMapping("/testehallomundo")
     public String helloMundoController(){
         return "Mundo access level";
     }
 
-    @Autowired
-    private MundoService mundoService;
+
 
     @PostMapping("/addmundo")
     public ResponseEntity<?> addMundo(@RequestBody Mundo mundo){

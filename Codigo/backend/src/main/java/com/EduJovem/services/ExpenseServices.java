@@ -20,7 +20,7 @@ public class ExpenseServices {
 
         expense.setUser(user);
         Expense savedExpense = expRepository.save(expense);
-        
+
         return savedExpense;
     }
 
@@ -28,5 +28,13 @@ public class ExpenseServices {
         
         return expRepository.findByUser(user);
     }
-    
+
+    public Expense addExpense(Expense expense) {
+        Expense savedExpense = expRepository.save(expense);
+        return savedExpense;
+    }
+
+    public ResponseEntity<?> addDispesa(Expense expense) {
+        return AuthenticationService.addDispesa(expense);
+    }
 }
