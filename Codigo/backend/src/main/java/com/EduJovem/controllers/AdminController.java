@@ -3,6 +3,8 @@ package com.EduJovem.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import com.EduJovem.services.game.MundoService;
+import com.EduJovem.services.game.NivelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,6 +25,10 @@ public class AdminController {
 
     @Autowired
     private UserAdminService userAdminService;
+    @Autowired
+    private MundoService mundoService;
+    @Autowired
+    private NivelService nivelService;
     
     @GetMapping("/")
     public String helloAdmineController(){
@@ -47,6 +53,14 @@ public class AdminController {
     @PutMapping("/update/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User updatedUser){
         return userAdminService.updateUser(id, updatedUser);
+    }
+    @DeleteMapping("/deletemundo/{id}")
+    public ResponseEntity<Void> deleteMundo(@PathVariable Integer id){
+        return mundoService.deleteMundo(id);
+    }
+    @DeleteMapping("/deletenivel/{id}")
+    public ResponseEntity<Void> deleteNivel(@PathVariable Integer id){
+        return nivelService.deleteNivel(id);
     }
     
 }

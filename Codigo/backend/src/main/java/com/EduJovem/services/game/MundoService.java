@@ -8,7 +8,11 @@ import com.EduJovem.models.Nivel;
 import com.EduJovem.repository.MundoRepository;
 import com.EduJovem.services.authentication.AuthenticationService;
 
+import com.EduJovem.services.exceptions.DatabaseException;
+import com.EduJovem.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -31,5 +35,16 @@ public class MundoService {
 
     public List<Mundo> getAllMundos(){
         return mundoRepository.findAll();
+    }
+
+    public ResponseEntity<Void> deleteMundo(Integer id){
+        try{
+            mundoRepository.deleteById(id);
+            return ResponseEntity.noContent().build();
+        } catch (EmptyResultDataAccessException e) {
+            throw new ResourceNotFoundException(id);
+        }catch(DataIntegrityViolationException e){
+            throw new DatabaseException(e.getMessage());
+        }
     }
 }

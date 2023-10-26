@@ -8,5 +8,5 @@ public interface UserServiceInterface {
     List<User> getAllUsers();
     User getUser(Integer id);
     ResponseEntity<Void> deleteUser(Integer id);
-    public ResponseEntity<User> updateUser(Integer id, User updateUser);
+    ResponseEntity<User> updateUser(Integer id, User updateUser);
 }
