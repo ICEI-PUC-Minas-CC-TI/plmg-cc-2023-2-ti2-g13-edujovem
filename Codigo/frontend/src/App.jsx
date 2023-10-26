@@ -41,7 +41,6 @@ function App() {
             <Route path='/home' element={<Private><Home /></Private>} />
             <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          
           <Route path='/profile' element={<Private><Profile /></Private>} />
           <Route path='/caderninho' element={<Private><Caderninho /></Private>} />
         </Routes>

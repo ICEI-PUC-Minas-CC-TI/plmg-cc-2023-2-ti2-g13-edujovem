@@ -1,15 +1,21 @@
-import React from 'react'
-import styles from './Profile.module.css'
+import React from "react";
+import styles from "./Profile.module.css";
+import { NavLink } from "react-router-dom";
 
-import RendaForm from './RendaForm'
-
+// COMPONENTS
+import Button from "../../components/Button";
+import RendaForm from "./RendaForm";
 
 const Profile = () => {
-  return (
-    <div>
-      <RendaForm/>
-    </div>
-  )
-}
+   return (
+      <div>
+         <NavLink to="/home">
+            <Button>Sair</Button>
+         </NavLink>
 
-export default Profile
+         <RendaForm />
+      </div>
+   );
+};
+
+export default Profile;

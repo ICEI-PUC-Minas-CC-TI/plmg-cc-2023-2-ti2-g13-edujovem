@@ -19,6 +19,7 @@ const ButtonVariants = cva(
         small: ["text-sm", "py-1", "px-2"],
         medium: ["text-base", "py-2", "px-4"],
         oneOfThree: ["text-base", "py-2", "px-4", "w-[32%]"],
+        one: ["text-base", "py-2", "px-4", "w-full"],
         large: ["text-lg", "py-4", "px-8"],
       },
       roundness: {
