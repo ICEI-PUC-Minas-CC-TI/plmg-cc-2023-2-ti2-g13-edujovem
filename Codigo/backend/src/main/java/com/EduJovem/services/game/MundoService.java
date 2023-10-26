@@ -10,6 +10,7 @@ import com.EduJovem.services.authentication.AuthenticationService;
 
 import com.EduJovem.services.exceptions.DatabaseException;
 import com.EduJovem.services.exceptions.ResourceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -45,6 +46,25 @@ public class MundoService {
             throw new ResourceNotFoundException(id);
         }catch(DataIntegrityViolationException e){
             throw new DatabaseException(e.getMessage());
+        }
+    }
+    private void updateMundoData(Mundo mundo, Mundo updatedNivel) {
+        if (updatedNivel.getName() != null) {
+            mundo.setName(updatedNivel.getName());
+        }
+        if(updatedNivel.getTheme() != null) {
+            mundo.setTheme(updatedNivel.getTheme());
+        }
+    }
+    public ResponseEntity<Mundo> updateMundo(Integer id, Mundo updateMundo){
+        try{
+            Mundo mundo = mundoRepository.findById(id).get();
+            updateMundoData(mundo, updateMundo);
+            Mundo updated = mundoRepository.save(mundo);
+            return ResponseEntity.ok().body(updated);
+        }catch(EntityNotFoundException e){
+            return ResponseEntity.badRequest().build();
+
         }
     }
 }
