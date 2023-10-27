@@ -8,6 +8,7 @@ import Conta from '../../assets/conta.png';
 import Configuracoes from '../../assets/configuracoes.png';
 import Calculadora from '../../assets/calculadora.png';
 import CalcJuros from '../../assets/calcJuros.png';
+import MundoCard  from '../../components/MundoCard';
 
 
 // HOOKS
@@ -99,8 +100,9 @@ const Home = () => {
               <div className='relative w-full h-[15%] border-b-2'>
                 <h1 className='text-2xl font-bold'>Mundos</h1>
               </div>
-              <div className='relative w-full h-[90%]'>
-                
+              <div className='relative w-full h-[90%] py-2 flex inline-flex gap-x-5'>
+                <MundoCard title={'Poupança'} id={1} desc={`SOCOOOOOOOORRRRRRROOOOOOOOOOOOOOOOOOOOOOOOAAAAAAAAAAAAAAAAAAAAAAAAA`}/>
+                <MundoCard title={'investimentos'} id={2}/>
               </div>
             </div>
           </MouseHoverBox>
