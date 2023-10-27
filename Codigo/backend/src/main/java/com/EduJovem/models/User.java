@@ -124,6 +124,12 @@ public class User implements UserDetails{
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	public List<Mundo> getMundos() {
+		return mundos;
+	}
+	public List<Expense> getExpenses() {
+		return expenses;
+	}
 	
 	/* If you want account locking capabilities create variables and ways to set them for the methods below */
 	@Override
