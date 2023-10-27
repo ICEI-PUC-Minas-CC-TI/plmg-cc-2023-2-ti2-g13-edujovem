@@ -1,15 +1,16 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
-import { useState } from 'react';
+// COMPONENTS
 import Button from "../../components/Button";
 import MouseHoverBox from '../../components/MouseHoverBox';
+// IMG
 import Sair from '../../assets/sair.png';
 import Conta from '../../assets/conta.png';
 import Configuracoes from '../../assets/configuracoes.png';
 import Calculadora from '../../assets/calculadora.png';
 import CalcJuros from '../../assets/calcJuros.png';
-
-
+// PAGES
+import Caderninho from '../caderninho/Caderninho';
 // HOOKS
 import { useAuthContext } from '../../hooks/useAuthContext'
 
@@ -105,8 +106,10 @@ const Home = () => {
             </div>
           </MouseHoverBox>
         </section>
-        <section className=' shadow-lg bg-[#ffffff] from-[#cacaca] to-[#f0f0f0] rounded-md h-[60%]'>
-          <MouseHoverBox borderColor={'#FF810B'}>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</MouseHoverBox>
+        <section className='shadow-lg bg-[#ffffff] from-[#cacaca] to-[#f0f0f0] rounded-md h-[60%]'>
+          <MouseHoverBox borderColor={'#FF810B'}>
+            <Caderninho /> 
+          </MouseHoverBox>
         </section>
          
       </section>

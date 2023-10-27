@@ -4,7 +4,7 @@ const Expense = ({expense, removeExpense}) => {
   return (
     <div className={styles.expense}>
       <ul className={styles.content}>
-        <li>R$: {expense.valueInput.toFixed(2)}</li>
+        <li>R$: {expense.valueInput}</li>
         <li>{expense.text}</li>
         <li>{expense.category}</li>
       </ul>
