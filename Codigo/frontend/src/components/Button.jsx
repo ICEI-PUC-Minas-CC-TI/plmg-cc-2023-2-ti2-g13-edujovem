@@ -11,7 +11,7 @@ const ButtonVariants = cva(
           "text-white border-solid border border-white border-2 hover:bg-black hover:border-transparent",
         emphasis1:
           "bg-[#FF8400] text-white border border-[#FF8400] hover:bg-[#D66F00] hover:border-[#D66F00]",
-        emphasis2: 'bg-gradient-to-tl to-[#adadad] from-[#929292] text-white font-bold hover:bg-[#D66F00]',
+        emphasis2: 'bg-[#A2A2A2] hover:bg-[#D66F00 text-white font-bold hover:bg-[#D66F00]',
         default:
           "bg-gray-500 hover:bg-gray-600",
       },

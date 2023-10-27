@@ -19,10 +19,12 @@ const ExpenseForm = ({ addExpense }) => {
 
    return (
       <div>
-         <h2>Registrar gasto</h2>
-         <form onSubmit={handleSubmit}>
+         <h2 className="text-start font-bold">Registrar gasto</h2>
+         <form onSubmit={handleSubmit} className="flex flex-col gap-y-2 overflow-auto">
             <label>
+               
                <input
+                  className="w-[100%] box-border border-0 border-b-[1px] border-[#b3b1b1] bg-transparent focus:outline-0"
                   type="text"
                   placeholder="R$:"
                   value={valueInput}
@@ -31,13 +33,15 @@ const ExpenseForm = ({ addExpense }) => {
             </label>
             <label>
                <input
+                  className="w-[100%] box-border border-0 border-b-[1px] border-[#b3b1b1] bg-transparent focus:outline-0"
                   type="text"
-                  placeholder="motivo do gasto"
+                  placeholder="Motivo do gasto"
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                />
             </label>
             <select
+               className="w-[100%] box-border border-0 border-b-[1px] border-[#b3b1b1] bg-transparent focus:outline-0"
                value={category}
                onChange={(e) => setCategory(e.target.value)}
             >
@@ -46,7 +50,7 @@ const ExpenseForm = ({ addExpense }) => {
                <option value="estudo">estudo</option>
                <option value="drogas">Drogas</option>
             </select>
-               <Button type="submit">Registrar despesa</Button>
+               <Button intent={'emphasis2'} className="bg-[#A2A2A2]">Registrar </Button>
          </form>
       </div>
    );

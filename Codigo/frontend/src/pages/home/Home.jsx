@@ -101,7 +101,7 @@ const Home = () => {
               <div className='relative w-full h-[15%] border-b-2'>
                 <h1 className='text-2xl font-bold'>Mundos</h1>
               </div>
-              <div className='relative w-full h-[90%] py-2 flex inline-flex gap-x-5'>
+              <div className='relative w-full h-[85%] py-2 flex inline-flex gap-x-5'>
                 <MundoCard title={'Poupança'} id={1} desc={`SOCOOOOOOOORRRRRRROOOOOOOOOOOOOOOOOOOOOOOOAAAAAAAAAAAAAAAAAAAAAAAAA`}/>
                 <MundoCard title={'investimentos'} id={2}/>
               </div>
@@ -110,6 +110,9 @@ const Home = () => {
         </section>
         <section className='shadow-lg bg-[#ffffff] from-[#cacaca] to-[#f0f0f0] rounded-md h-[60%]'>
           <MouseHoverBox borderColor={'#FF810B'}>
+          <div className='relative w-full h-[10%] border-b-2'>
+            <h1 className='text-2xl font-bold'>Anotação de despesas</h1>
+          </div>
             <Caderninho /> 
           </MouseHoverBox>
         </section>

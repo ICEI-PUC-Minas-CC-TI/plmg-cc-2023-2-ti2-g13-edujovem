@@ -61,9 +61,8 @@ const Caderninho = () => {
 
    return (
       <div className={styles.caderninho}>
-         <h1>Caderninho de despesas</h1>
-         <Search search={search} setSearch={setSearch} />
-         <div className="expenses_list">
+         
+         <div className="expenses_list overflow-auto">
             {expenses
                .filter((exp) =>
                   exp.text.toLowerCase().includes(search.toLowerCase())
@@ -76,6 +75,7 @@ const Caderninho = () => {
                   />
                ))}
          </div>
+         <Search search={search} setSearch={setSearch} />
          <ExpenseForm addExpense={addExpense} />
       </div>
    );

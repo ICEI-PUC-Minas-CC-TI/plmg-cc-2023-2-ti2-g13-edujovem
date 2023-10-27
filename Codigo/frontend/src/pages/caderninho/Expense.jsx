@@ -8,8 +8,8 @@ const Expense = ({expense, removeExpense}) => {
         <li>{expense.text}</li>
         <li>{expense.category}</li>
       </ul>
-      <div>
-        <button className={styles.remove} onClick={() => removeExpense(expense.id)}>x</button>
+      <div className='w-auto h-full p-0'>
+        <button className="bg-[#d9534f] w-full h-full" onClick={() => removeExpense(expense.id)}>x</button>
       </div>
     </div>
   )
