@@ -20,24 +20,12 @@ public class Expense {
 
     private Instant moment;
     private String description;
-    private Integer category;
+//    private Integer category;
     private Double value;
 
     @ManyToOne
-    @JoinColumn(name="caderno_id")
-    private Caderno caderno;
-
-    public Expense(){
-    }
-
-
-    public Expense(Integer id, Instant moment, String description, ExpenseCategory category, Double value) {
-        this.id = id;
-        this.moment = moment;
-        this.description = description;
-        setCategory(category);
-        this.value = value;
-    }
+    @JoinColumn(name = "user_id")
+    private User user;
 
 
     public Integer getId() {
@@ -69,15 +57,15 @@ public class Expense {
         this.description = description;
     }
 
-    public ExpenseCategory getCategory() {
-        return ExpenseCategory.valueOf(category);
-    }
-
-    public void setCategory(ExpenseCategory category) {
-        if(category != null) {
-            this.category = category.getCode();
-        }
-    }
+//    public ExpenseCategory getCategory() {
+//        return ExpenseCategory.valueOf(category);
+//    }
+//
+//    public void setCategory(ExpenseCategory category) {
+//        if(category != null) {
+//            this.category = category.getCode();
+//        }
+//    }
 
 
     public Double getValue() {
@@ -88,6 +76,18 @@ public class Expense {
     public void setValue(Double value) {
         this.value = value;
     }
-    
-    
+
+
+//    public void setCategory(Integer category) {
+//        this.category = category;
+//    }
+
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
 }

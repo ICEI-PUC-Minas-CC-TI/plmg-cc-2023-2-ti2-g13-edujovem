@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./ExpenseForm.module.css";
+// COMPONENTS
+import Button from "../../components/Button";
 
 const ExpenseForm = ({ addExpense }) => {
    const [valueInput, setValueInput] = useState("");
@@ -10,7 +12,7 @@ const ExpenseForm = ({ addExpense }) => {
       e.preventDefault();
       if (!valueInput || !text) return;
       addExpense(valueInput, text, category);
-      setValue();
+      setValueInput("");
       setText("");
       setCategory("");
    };
@@ -44,7 +46,7 @@ const ExpenseForm = ({ addExpense }) => {
                <option value="estudo">estudo</option>
                <option value="drogas">Drogas</option>
             </select>
-               <button type="submit">Registrar despesa</button>
+               <Button type="submit">Registrar despesa</Button>
          </form>
       </div>
    );

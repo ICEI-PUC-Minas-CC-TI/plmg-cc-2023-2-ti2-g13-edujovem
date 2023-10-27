@@ -1,6 +1,12 @@
 .caderninho {
     text-align: center;
 }
+.caderninho button {
+    text-align: center;
+    padding: 4px 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
 ul{
     list-style: none;
 }

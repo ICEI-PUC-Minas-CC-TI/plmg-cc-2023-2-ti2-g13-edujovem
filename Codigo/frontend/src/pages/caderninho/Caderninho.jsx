@@ -22,6 +22,20 @@ const Caderninho = () => {
          category: "exercicio",
          isCompleted: false,
       },
+      {
+         id: 3,
+         valueInput: 98.80,
+         text: "sanduiche iche iche",
+         category: "comida",
+         isCompleted: false,
+      },
+      {
+         id: 3,
+         valueInput: 98.80,
+         text: "sanduiche iche iche",
+         category: "comida",
+         isCompleted: false,
+      },
    ]);
    const addExpense = (valueInput, text, category) => {
       const newExpenses = [
