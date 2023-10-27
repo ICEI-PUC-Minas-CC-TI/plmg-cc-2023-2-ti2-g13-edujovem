@@ -21,7 +21,7 @@ public class ExpenseController {
     @Autowired
     private ExpenseServices expenseService;
 
-    
+
     @GetMapping("/getAll")
     public ResponseEntity<List<Expense>> getAllExpenses(@RequestBody User user) {
         List<Expense> expenses = expenseService.getExpensesByUser(user);
@@ -32,5 +32,9 @@ public class ExpenseController {
     public ResponseEntity<Expense> addExpense(@RequestBody Expense expense, @RequestBody User user) {
         Expense savedExpense = expenseService.addExpenseToUser(user, expense);
         return ResponseEntity.ok(savedExpense);
+    }
+    @PostMapping("/addDispesas")
+    public ResponseEntity<?> addExpense(@RequestBody Expense expense) {
+        return expenseService.addDispesa(expense);
     }
 }
