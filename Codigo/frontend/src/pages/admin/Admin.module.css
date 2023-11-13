@@ -1,0 +1,14 @@
+.admin{
+   display: flex;
+   flex-direction: column; 
+}
+.admin_header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards{
+    padding-inline: 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

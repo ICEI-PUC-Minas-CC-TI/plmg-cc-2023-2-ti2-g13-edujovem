@@ -25,11 +25,12 @@ export const AuthContextProvider = ({ children }) => {
     
     if(res.data.jwt){
       const userLogged = res.data
-      const token = res.data.token
+      const token = res.data.jwt
       localStorage.setItem("user", JSON.stringify(userLogged));
       localStorage.setItem("jwt", token);
       api.defaults.Authorization = `Bearer ${token}`
       setUser(userLogged);
+      
       navigate("/home");
     }else{
       alert("incorreto")
