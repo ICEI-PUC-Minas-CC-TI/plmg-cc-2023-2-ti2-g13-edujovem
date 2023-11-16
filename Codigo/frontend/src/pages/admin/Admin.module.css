@@ -8,7 +8,7 @@
 }
 
 .cards{
-    padding-inline: 10%;
+    padding-inline: 21%;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
