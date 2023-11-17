@@ -12,14 +12,14 @@ import Profile from './pages/profile/Profile'
 import Caderninho from './pages/caderninho/Caderninho'
 import Admin from './pages/admin/Admin'
 import ManageUsers from './pages/admin/ManageUsers'
+import NavBarAdmin from './pages/admin/NavBarAdmin'
 
 import { AuthContextProvider, AuthContext } from './context/AuthContext'
 
 
 function App() {
-
   const Private = ({ children }) => {
-    const {authenticated, user, role, loading} = useContext(AuthContext)
+    const {authenticated, loading} = useContext(AuthContext)
 
     if(loading){
       return  <div>Loading...</div>
@@ -27,7 +27,6 @@ function App() {
     if(!authenticated) {
       return <Navigate to='/'/>
     }
-
     return children
   }
   
@@ -35,9 +34,8 @@ function App() {
   return (
     <div className="app">
     <BrowserRouter>
-      <div className="">
           <AuthContextProvider>
-        
+      <div className="">
         <Routes>
            <Route path='/admin' element={<Private><Admin /></Private>} />
             <Route path='/' element={<Landing />} />
@@ -46,11 +44,10 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/profile' element={<Private><Profile /></Private>} />
           <Route path='/caderninho' element={<Private><Caderninho /></Private>} />
-          {/*Pagina 404 */}
           <Route path='*' element={<NotFound />} />
         </Routes>
-        </AuthContextProvider>
       </div>
+        </AuthContextProvider>
     </BrowserRouter>
   </div>
       
