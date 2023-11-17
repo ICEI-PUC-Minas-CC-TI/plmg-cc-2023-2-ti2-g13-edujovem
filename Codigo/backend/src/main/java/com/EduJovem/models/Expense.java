@@ -14,8 +14,9 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="expenses")
 public class Expense {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
     private Instant moment;
@@ -26,20 +27,6 @@ public class Expense {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-
-    public Expense() {
-    }
-
-    public Expense(Integer id,Instant moment, String description, Double value, User user) {
-        this.id = id;
-        this.moment = moment;
-        this.description = description;
-        this.value = value;
-        this.user = user;
-    }
-
-   
-
 
     public Integer getId() {
         return id;
