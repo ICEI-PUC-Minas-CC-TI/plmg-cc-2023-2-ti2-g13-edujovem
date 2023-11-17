@@ -1,8 +1,9 @@
+import { NavLink } from "react-router-dom";
 // CSS
 import styles from "./Admin.module.css";
 
-//IMG
-import Sair from "../../assets/sair.png";
+// ICONS
+import { IoIosArrowBack } from 'react-icons/io';
 
 // COMPONENTS
 import Card from "../../components/Card";
@@ -21,9 +22,9 @@ const Admin = () => {
    return (
       <div className={styles.admin}>
          <div className={styles.admin_header}>
-            <button onClick={handleLogout}>
-               <img src={Sair} alt="sair" />
-            </button>
+            <NavLink  to="/home">
+               <Button onClick={handleLogout}><IoIosArrowBack /></Button>
+            </NavLink>
             <h1>ADMIN</h1>
          </div>
          <div className={styles.cards}>

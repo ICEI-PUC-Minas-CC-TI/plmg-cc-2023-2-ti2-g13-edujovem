@@ -5,7 +5,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import { IoIosArrowBack } from 'react-icons/io';
 
 const Login = () => {
-   const { authenticated, login } = useAuthContext();
+   const { login } = useAuthContext();
 
    const [username, setUsername] = useState("");
    const [password, setPassword] = useState("");

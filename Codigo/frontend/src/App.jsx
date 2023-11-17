@@ -17,21 +17,16 @@ import { AuthContextProvider, AuthContext } from './context/AuthContext'
 
 
 function App() {
-  const [admin, setAdmin] = useState(false);
+
   const Private = ({ children }) => {
-    const {authenticated, user, loading} = useContext(AuthContext)
+    const {authenticated, user, role, loading} = useContext(AuthContext)
 
     if(loading){
       return  <div>Loading...</div>
     }
-    if(!authenticated){
+    if(!authenticated) {
       return <Navigate to='/'/>
     }
-    if(user.user.authorities[0].authority == "ADMIN"){
-      setAdmin(true)
-      return <Navigate to='/admin'/>
-    }
-    
 
     return children
   }
@@ -44,7 +39,7 @@ function App() {
           <AuthContextProvider>
         
         <Routes>
-           <Route path='/admin' element={admin && <Admin />} />
+           <Route path='/admin' element={<Private><Admin /></Private>} />
             <Route path='/' element={<Landing />} />
             <Route path='/home' element={<Private><Home /></Private>} />
             <Route path='/login' element={<Login />} />

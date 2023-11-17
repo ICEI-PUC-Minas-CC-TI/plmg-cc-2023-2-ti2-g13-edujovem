@@ -37,8 +37,8 @@ const ButtonVariants = cva(
 );
 
 
-export default function Button({ intent, size, roundness, children }) {
+export default function Button({ intent, size, roundness, onClick, children }) {
   return (
-    <button className={ButtonVariants({ intent, size, roundness })}>{children}</button>
+    <button onClick={onClick} className={ButtonVariants({ intent, size, roundness })}>{children}</button>
   )
 }

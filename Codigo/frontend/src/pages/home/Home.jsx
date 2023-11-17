@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate } from "react-router-dom";
 // COMPONENTS
 import Button from "../../components/Button";
 import MouseHoverBox from '../../components/MouseHoverBox';
@@ -16,7 +16,7 @@ import Caderninho from '../caderninho/Caderninho';
 import { useAuthContext } from '../../hooks/useAuthContext'
 
 const Home = () => {
-  const { logout, authenticated } = useAuthContext();
+  const { logout, role } = useAuthContext();
 
   const handleLogout = () => {
     logout();
@@ -25,7 +25,13 @@ const Home = () => {
   //<div className=' shadow-lg bg-[#ffffff] from-[#cacaca] to-[#f0f0f0] rounded-md h-[60%]'>aaaaaa</div>
 
   return (
-    <div className='
+    <>
+      {role === "ADMIN" ? (
+        <div>
+            <Navigate to='/admin'/>
+        </div>
+      ) : (
+        <div className='
       w-[100vw] h-[100vh] bg-[#B4EFF7] flex inline-flex text-black justify-between gap-x-4 truncate text-black font-montserrat
    '>
       <section className='relative rounded-md shadow-lg bg-[#ffffff] from-10% from-[#cacaca] to-[#f0f0f0] h-[97vh] w-[20%] my-3 ml-3'>
@@ -122,6 +128,8 @@ const Home = () => {
       
       
     </div>
+      )}
+    </>
   )
 }
 //#E4E4E4
