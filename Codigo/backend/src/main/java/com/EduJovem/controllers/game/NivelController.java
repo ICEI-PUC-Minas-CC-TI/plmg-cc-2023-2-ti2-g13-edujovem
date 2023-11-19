@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/nivel")
+@CrossOrigin("*")
 public class NivelController {
 
     @GetMapping("/")

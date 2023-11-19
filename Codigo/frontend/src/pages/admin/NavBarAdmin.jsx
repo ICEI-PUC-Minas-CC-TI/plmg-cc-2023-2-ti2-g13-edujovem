@@ -23,16 +23,16 @@ const NavBarAdmin = () => {
     
     return (
         <nav className={styles.navbar}>
-          <NavLink to="/" className={styles.brand}>
+          <div to="/admin" className={styles.brand}>
             Edu<span>Jovem</span>
-          </NavLink>
+          </div>
           <ul className={styles.link_list}>
             <li>
               <NavLink
-                to="/"
+                to="/admin/manage"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
-                Home
+                Manage users
               </NavLink>
             </li>
             <li>
@@ -53,7 +53,7 @@ const NavBarAdmin = () => {
             </li>
             <li>
             <NavLink  to="/">
-               <Button size="small" onClick={handleLogout}>Sair</Button>
+               <Button onClick={handleLogout}>Sair</Button>
             </NavLink>
             </li>
           </ul>

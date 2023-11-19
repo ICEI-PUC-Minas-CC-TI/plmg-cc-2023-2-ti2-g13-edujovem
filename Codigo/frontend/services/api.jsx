@@ -11,3 +11,7 @@ export const createSession = async (data) => {
 export const createUserAccount = async(data) => {
     return api.post("/auth/register", data)
 }
+
+export const getAllusers = async() => {
+    return api.get("/admin/users")
+}

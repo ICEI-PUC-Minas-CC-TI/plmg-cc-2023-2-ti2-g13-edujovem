@@ -12,7 +12,6 @@ import Profile from './pages/profile/Profile'
 import Caderninho from './pages/caderninho/Caderninho'
 import Admin from './pages/admin/Admin'
 import ManageUsers from './pages/admin/ManageUsers'
-import NavBarAdmin from './pages/admin/NavBarAdmin'
 
 import { AuthContextProvider, AuthContext } from './context/AuthContext'
 
@@ -38,6 +37,7 @@ function App() {
       <div className="">
         <Routes>
            <Route path='/admin' element={<Private><Admin /></Private>} />
+           <Route path='/admin/manage' element={<Private><ManageUsers /></Private>} />
             <Route path='/' element={<Landing />} />
             <Route path='/home' element={<Private><Home /></Private>} />
             <Route path='/login' element={<Login />} />
