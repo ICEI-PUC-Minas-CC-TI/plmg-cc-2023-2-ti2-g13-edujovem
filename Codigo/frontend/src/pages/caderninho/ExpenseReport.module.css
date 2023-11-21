@@ -1,0 +1,12 @@
+.ExpenseReport{
+    background-color: #333;
+    padding: 2em;
+}
+.ExpenseReport h1{
+    font-size: 1.7em;
+}
+
+.ExpenseReport nav{
+    display: flex;
+    justify-content: space-around;
+}

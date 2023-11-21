@@ -12,6 +12,7 @@ import Profile from './pages/profile/Profile'
 import Caderninho from './pages/caderninho/Caderninho'
 import Admin from './pages/admin/Admin'
 import ManageUsers from './pages/admin/ManageUsers'
+import ExpenseReport from './pages/caderninho/ExpenseReport'
 
 import { AuthContextProvider, AuthContext } from './context/AuthContext'
 
@@ -44,6 +45,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/profile' element={<Private><Profile /></Private>} />
           <Route path='/caderninho' element={<Private><Caderninho /></Private>} />
+          <Route path='/report' element={<Private><ExpenseReport /></Private>} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
