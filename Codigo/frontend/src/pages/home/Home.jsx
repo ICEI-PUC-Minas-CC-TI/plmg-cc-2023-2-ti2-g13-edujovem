@@ -10,6 +10,7 @@ import Configuracoes from '../../assets/configuracoes.png';
 import Calculadora from '../../assets/calculadora.png';
 import CalcJuros from '../../assets/calcJuros.png';
 import MundoCard  from '../../components/MundoCard';
+import Carteira from '../../assets/carteira.png';
 // PAGES
 import Caderninho from '../caderninho/Caderninho';
 // HOOKS
@@ -51,7 +52,7 @@ const Home = () => {
                 <div className='border-r-2 h-full py-2 pr-3'>
                   <img src={Calculadora} alt="calculadora" />
                 </div>
-                <h1 className='pl-3'>Calculadora normal</h1>
+                <h1 className='pl-3'>Calculadora</h1>
               </div>
               <div className='
                 bg-[#A2A2A2] shadow-md text-white font-bold hover:bg-[#D66F00] h-fit 
@@ -63,9 +64,22 @@ const Home = () => {
                 <div className='border-r-2 h-full py-2 pr-3'>
                   <img src={CalcJuros} alt="calculadora juros" />
                 </div>
-                <h1 className='pl-3'>Calculadora de juros</h1>
+                <h1 className='pl-3'>Calc. juros</h1>
+              </div>
+              <div className='
+                bg-[#A2A2A2] shadow-md text-white font-bold hover:bg-[#D66F00] h-fit 
+                flex inline-flex items-center uppercase tracking-normal transition-colors 
+                duration-150 text-base px-4 w-full rounded-md'
+                  
+              >
+                <NavLink to="/gastos">
+                  <img src={Carteira} alt="gastos"/>
+                </NavLink>
+                
+                <h1 className='pl-3'>Gastos Mensais</h1>
               </div>
             </div>
+            
             <div className='relative w-full h-[20%] rounded-md flex flex-col justify-end pb-1'>
               <div className='flex inline-flex items-center gap-x-4'>
                 <div className='
