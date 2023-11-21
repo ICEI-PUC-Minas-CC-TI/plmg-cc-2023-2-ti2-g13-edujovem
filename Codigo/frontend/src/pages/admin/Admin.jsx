@@ -45,21 +45,33 @@ const Admin = () => {
                   content="Desenvolvedor backend"
                   imageUrl="https://via.placeholder.com/300"
                >
-                  <Button>MUNDOS</Button>
+                  <div className={styles.midias}>
+                     <Button onClick={() => openLinkInNewTab('https://www.instagram.com/thomas_neuenschwander/')}> <InstagramIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://www.linkedin.com/in/thomas-neuenschwander-87a568267/')}> <LinkedInIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://github.com/thomneuenschwander')}> <GithubIcon /> </Button>
+                  </div>
                </Card>
                <Card
                   title="Rodrigo Drummond"
                   content="Desenvolvedor sist inteligente + backend"
                   imageUrl="https://via.placeholder.com/300"
                >
-                  <Button>MUNDOS</Button>
+                  <div className={styles.midias}>
+                     <Button onClick={() => openLinkInNewTab('https://www.instagram.com/thomas_neuenschwander/')}> <InstagramIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://www.linkedin.com/in/thomas-neuenschwander-87a568267/')}> <LinkedInIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://github.com/thomneuenschwander')}> <GithubIcon /> </Button>
+                  </div>
                </Card>
                <Card
                   title="Vinicius Goddard"
                   content="Desenvolvedor frontend + designer"
                   imageUrl="https://via.placeholder.com/300"
                >
-                  <Button>MUNDOS</Button>
+                  <div className={styles.midias}>
+                     <Button onClick={() => openLinkInNewTab('https://www.instagram.com/thomas_neuenschwander/')}> <InstagramIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://www.linkedin.com/in/thomas-neuenschwander-87a568267/')}> <LinkedInIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://github.com/thomneuenschwander')}> <GithubIcon /> </Button>
+                  </div>
                </Card>
             </div>
          </div>

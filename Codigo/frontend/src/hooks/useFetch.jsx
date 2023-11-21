@@ -13,15 +13,16 @@ export const useFetch = (url) => {
     const [error, setError] = useState(null)
 
     const httpCofig = (data, method) => {
+        const token = localStorage.getItem("jwt");
         if(method == "POST"){
             setConfig({
                 method,
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify(data)
             })
-
             setMethod(method)
         }
     }
@@ -31,7 +32,14 @@ export const useFetch = (url) => {
         const fetchData = async ()=>{
             setLoading(true)
             try {
-                const res = await fetch(url)
+                const token = localStorage.getItem("jwt");
+                console.log(token)
+                const res = await fetch(url, {
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    }
+                })
                 const json = await res.json()
                 setData(json)
             } catch (error) {

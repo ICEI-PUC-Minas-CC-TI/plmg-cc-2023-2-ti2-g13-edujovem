@@ -32,7 +32,7 @@ const NavBarAdmin = () => {
                 to="/admin/manage"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
-                Manage users
+                Usuários
               </NavLink>
             </li>
             <li>
@@ -40,15 +40,15 @@ const NavBarAdmin = () => {
                 to="/about"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
-                About
+                Mundos
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/login"
+                to="/*"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
-                Entrar
+                Sobre
               </NavLink>
             </li>
             <li>

@@ -15,3 +15,7 @@ export const createUserAccount = async(data) => {
 export const getAllusers = async() => {
     return api.get("/admin/users")
 }
+
+export const getUser = async (userId) => {
+    return api.get(`/admin/users/${userId}`);
+  }
