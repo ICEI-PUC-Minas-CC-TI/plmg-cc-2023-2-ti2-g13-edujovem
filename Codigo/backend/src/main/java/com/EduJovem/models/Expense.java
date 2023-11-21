@@ -1,93 +1,49 @@
 package com.EduJovem.models;
 
-import java.time.Instant;
-import com.EduJovem.models.enums.ExpenseCategory;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="expenses")
 public class Expense {
-
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
-
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer ID;
     private Instant moment;
-    private String description;
-//    private Integer category;
-    private Double value;
+    private String theme;
+    private Float value;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name="user_id")
     private User user;
-
-    public Integer getId() {
-        return id;
-    }
-
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
 
     public Instant getMoment() {
         return moment;
     }
 
-
-    public void setMoment(Instant moment) {
+    public void setMoment(String nome) {
         this.moment = moment;
     }
 
+    public Integer getID() {
+        return ID;
+    }
 
-    public String getDescription() {
-        return description;
+    public void setID(Integer ID) {
+        this.ID = ID;
+    }
+    public String getTheme() {
+        return theme;
+    }
+    public void setTheme(String tema) {
+        this.theme = tema;
     }
 
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-//    public ExpenseCategory getCategory() {
-//        return ExpenseCategory.valueOf(category);
-//    }
-//
-//    public void setCategory(ExpenseCategory category) {
-//        if(category != null) {
-//            this.category = category.getCode();
-//        }
-//    }
-
-
-    public Double getValue() {
-        return value;
-    }
-
-
-    public void setValue(Double value) {
-        this.value = value;
-    }
-
-
-//    public void setCategory(Integer category) {
-//        this.category = category;
-//    }
-
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public User getUser() {
-        return user;
-    }
 }
+

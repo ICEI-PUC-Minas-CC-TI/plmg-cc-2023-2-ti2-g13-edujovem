@@ -124,6 +124,14 @@ public class AuthenticationService {
     }
 
     public ResponseEntity<?> addDespesa(Despesas despesa) {
-        return new ResponseEntity<>(deRepository.save(despesa), HttpStatus.OK);
+        if(despesa.getTheme().equals("")){
+            mensagem.setMensagem("Tema não pode ser vazio");
+            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+        } else if(deRepository.findByTheme(despesa.getTheme()).isPresent()){
+            mensagem.setMensagem("Tema já cadastrado");
+            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<>(deRepository.save(despesa), HttpStatus.OK);
+        }
     }
 }
