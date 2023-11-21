@@ -31,7 +31,6 @@ const ManageUsers = () => {
     }
   };
   
-
   useEffect(() => {
     fetchAllUsers()
     console.log(users)
@@ -41,7 +40,11 @@ const ManageUsers = () => {
     <div>
       <NavBarAdmin />
         <div>
-            
+        <ul>
+        {users && users.map((user)=>( 
+          <li key={user.userId}><strong>ID: {user.userId}</strong> | <strong>Nick:</strong> {user.username} | <strong>Nome:</strong> {user.name} | <strong>Email: </strong>{user.email} | </li>
+        ))}
+      </ul>
         </div>
         <div className={styles.floor}>
         <NavLink to='/admin'>
