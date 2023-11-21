@@ -45,7 +45,7 @@ public class AuthenticationService {
     @Autowired
     private ExpenseRepository expRepository;
     @Autowired
-    private DespesaRepository deRepository;
+    private ExpenseRepository exRepository;
 
     public ResponseEntity<?> addDispesa(Expense expense) {
         return new ResponseEntity<>(expRepository.save(expense), HttpStatus.OK);
@@ -123,15 +123,15 @@ public class AuthenticationService {
         return new ResponseEntity<>(expRepository.save(exp), HttpStatus.OK);
     }
 
-    public ResponseEntity<?> addDespesa(Despesas despesa) {
-        if(despesa.getTheme().equals("")){
+    public ResponseEntity<?> addDespesa(Expense expense) {
+        if(expense.getTheme().equals("")){
             mensagem.setMensagem("Tema não pode ser vazio");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
-        } else if(deRepository.findByTheme(despesa.getTheme()).isPresent()){
+        } else if(exRepository.findByTheme(expense.getTheme()).isPresent()){
             mensagem.setMensagem("Tema já cadastrado");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
         } else {
-            return new ResponseEntity<>(deRepository.save(despesa), HttpStatus.OK);
+            return new ResponseEntity<>(exRepository.save(expense), HttpStatus.OK);
         }
     }
 }
