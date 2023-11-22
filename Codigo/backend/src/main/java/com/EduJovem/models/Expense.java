@@ -12,6 +12,8 @@ public class Expense {
     private Instant moment;
     private String theme;
 
+    private Double valuessss;
+
 
     @ManyToOne
     @JoinColumn(name="user_id")
@@ -38,7 +40,12 @@ public class Expense {
     public void setTheme(String tema) {
         this.theme = tema;
     }
-
+    public Double getValue() {
+        return valuessss;
+    }
+    public void setValue(Double valor) {
+        this.valuessss = valor;
+    }
 
 }
 
