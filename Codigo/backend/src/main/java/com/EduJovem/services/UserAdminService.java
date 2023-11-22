@@ -67,7 +67,7 @@ public class UserAdminService implements UserServiceInterface {
     public ResponseEntity<User> updateUser(Integer id, User updatedUser){
         try{
             User user = userRepository.findById(id).get();
-	        updateUserData(user, updatedUser); 
+	        updateUserData(user, updatedUser);
 	        User updated = userRepository.save(user);
 	        return ResponseEntity.ok().body(updated);
         }catch(EntityNotFoundException e){

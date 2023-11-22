@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/expense")
+@RequestMapping("/expenses")
 @CrossOrigin("*")
 
 public class ExpenseController{
@@ -25,13 +25,13 @@ public class ExpenseController{
 
 
     @PostMapping("/addExpense")
-    public ResponseEntity<?> addDespesas(@RequestBody Expense expense){
-        return expenseService.addDespesa(expense);
+    public ResponseEntity<?> addExpense(@RequestBody Expense expense){
+        return expenseService.addExpense(expense);
     }
 
     @GetMapping("/listarExpense")
-    public List<Expense> getAllDespesas(){
-        return expenseService.getAllDespesas();
+    public List<Expense> getAllExpenses(){
+        return expenseService.getAllExpense();
     }
 
 

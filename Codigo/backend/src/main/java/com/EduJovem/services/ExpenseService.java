@@ -20,11 +20,11 @@ public class ExpenseService {
     @Autowired
     private ExpenseRepository expenseRepository;
 
-    public ResponseEntity<?> addDespesa(Expense expense){
-        return authenticationService.addDespesa(expense);
+    public ResponseEntity<?> addExpense(Expense expense){
+        return authenticationService.addExpense(expense);
     }
 
-    public List<Expense> getAllDespesas(){
+    public List<Expense> getAllExpense(){
         return expenseRepository.findAll();
     }
 
