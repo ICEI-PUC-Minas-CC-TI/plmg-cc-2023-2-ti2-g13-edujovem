@@ -3,20 +3,17 @@ package com.EduJovem.models;
 import jakarta.persistence.*;
 
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="expenses")
 public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer ID;
     private Instant moment;
     private String theme;
-    private Float value;
+
+    private Double valuessss;
+
 
     @ManyToOne
     @JoinColumn(name="user_id")
@@ -43,13 +40,12 @@ public class Expense {
     public void setTheme(String tema) {
         this.theme = tema;
     }
-
-    public Float getValue() {
-        return value;
+    public Double getValue() {
+        return valuessss;
+    }
+    public void setValue(Double valor) {
+        this.valuessss = valor;
     }
 
-    public void setValue(Float value) {
-        this.value = value;
-    }
 }
 
