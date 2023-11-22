@@ -4,6 +4,11 @@ import { Helmet } from "react-helmet"; // Certifique-se de importar Helmet corre
 // COMPONENTS
 import Button from "../../components/Button";
 import MouseHoverBox from "../../components/MouseHoverBox";
+import ExpenseNotes from "../caderninho/ExpenseNotes";
+
+// ICONS
+import useIcons from "../../hooks/useIcons";
+
 // IMG
 import Sair from "../../assets/sair.png";
 import Conta from "../../assets/conta.png";
@@ -12,8 +17,7 @@ import Calculadora from "../../assets/calculadora.png";
 import CalcJuros from "../../assets/calcJuros.png";
 import MundoCard from "../../components/MundoCard";
 import Carteira from "../../assets/carteira.png";
-// PAGES
-import Caderninho from "../caderninho/Caderninho";
+
 // HOOKS
 import { useAuthContext } from "../../hooks/useAuthContext";
 
@@ -21,6 +25,8 @@ import { useAuthContext } from "../../hooks/useAuthContext";
             
 const Home = () => {
    const { logout, role } = useAuthContext();
+
+   const { AdminIcon } = useIcons();
 
    const handleLogout = () => {
       logout();
@@ -86,6 +92,7 @@ const Home = () => {
                               </div>
                               <h1 className="pl-3">Calc. juros</h1>
                            </div>
+
                            <NavLink to="/report">
                               <div
                                  className="
@@ -97,8 +104,20 @@ const Home = () => {
                                  <h1 className="pl-3">Gastos Mensais</h1>
                               </div>
                            </NavLink>
-                        </div>
 
+                           <NavLink to="/caderninho/income">
+                              <div
+                                 className="
+                bg-[#A2A2A2] shadow-md text-white font-bold hover:bg-[#D66F00] h-fit 
+                flex inline-flex items-center uppercase tracking-normal transition-colors 
+                duration-150 text-base px-4 w-full rounded-md"
+                              >
+                                 <h1 className="py-2 px-3">$</h1>
+                                 <h1 className="pl-1"> Registrar Despesa</h1>
+                              </div>
+                           </NavLink>
+
+                        </div>
                         <div className="relative w-full h-[20%] rounded-md flex flex-col justify-end pb-1">
                            <div className="flex inline-flex items-center gap-x-4">
                               <div
@@ -160,7 +179,7 @@ const Home = () => {
                               Anotação de despesas
                            </h1>
                         </div>
-                        <Caderninho />
+                        <ExpenseNotes />
                      </MouseHoverBox>
                   </section>
                </section>

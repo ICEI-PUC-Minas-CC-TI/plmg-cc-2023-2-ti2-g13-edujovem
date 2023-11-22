@@ -9,6 +9,7 @@ public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer ID;
+
     private Instant moment;
     private String theme;
 
@@ -23,7 +24,7 @@ public class Expense {
         return moment;
     }
 
-    public void setMoment(String nome) {
+    public void setMoment(Instant moment) {
         this.moment = moment;
     }
 

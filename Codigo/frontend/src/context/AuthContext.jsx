@@ -41,7 +41,6 @@ export const AuthContextProvider = ({ children }) => {
 
       setUser(userLogged);
       
-      
       navigate("/home");
     }else{
       alert("incorreto")

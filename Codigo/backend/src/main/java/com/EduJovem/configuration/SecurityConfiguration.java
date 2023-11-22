@@ -56,12 +56,12 @@ public class SecurityConfiguration {
             .authorizeHttpRequests(auth -> {
                 auth.requestMatchers("/auth/**").permitAll();
                 auth.requestMatchers("/admin/**").permitAll();
-                auth.requestMatchers("/user/**").hasAnyRole("ADMIN", "USER");
-                auth.requestMatchers("/expenses/**").hasAnyRole("ADMIN", "USER");
-                auth.requestMatchers("/mundo/addmundo").hasRole("ADMIN");
-                auth.requestMatchers("/nivel/addnivel").hasRole("ADMIN");
-                auth.requestMatchers("/expense/addExpense").hasRole("ADMIN");
-                auth.requestMatchers("/despesa/addDespesa").hasRole("ADMIN");
+                auth.requestMatchers("/user/**").permitAll();
+                auth.requestMatchers("/expenses/**").permitAll();
+                auth.requestMatchers("/mundo/addmundo").permitAll();
+                auth.requestMatchers("/nivel/addnivel").permitAll();
+                auth.requestMatchers("/expense/addExpense").permitAll();
+                auth.requestMatchers("/despesa/addDespesa").permitAll();
                 auth.anyRequest().authenticated();
             });
             
