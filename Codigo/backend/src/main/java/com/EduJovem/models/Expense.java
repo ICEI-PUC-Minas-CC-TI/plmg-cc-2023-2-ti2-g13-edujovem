@@ -23,7 +23,7 @@ public class Expense {
         return moment;
     }
 
-    public void setMoment(String nome) {
+    public void setMoment(Instant moment) {
         this.moment = moment;
     }
 
