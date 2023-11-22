@@ -1,0 +1,59 @@
+/* UserDetails.module.css */
+
+.UserDetails {
+   max-width: 600px;
+   margin: auto;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   background-color: #fff;
+   color: #333;
+   font-size: 1.5em;
+
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.UserDetails h1 {
+   text-align: center;
+   color: #333;
+   margin-bottom: 1rem;
+   font-size: 2rem;
+}
+
+.UserDetails ul {
+   list-style: none;
+   padding: 0;
+}
+
+.UserDetails li {
+   margin-bottom: 1em;
+}
+
+.UserDetails a:hover {
+   text-decoration: underline;
+}
+.crud {
+   width: 100%;
+   margin: 2rem;
+   display: flex;
+   align-items: center;
+   gap: 1em;
+   justify-content: center;
+}
+
+.UserDetails input {
+   outline: none;
+   color: #333;
+   background-color: transparent;
+   border: 1px solid #333;
+
+   box-sizing: border-box;
+   border: none;
+   border-bottom: 1px solid #ccc;
+   background-color: transparent;
+   border-bottom: 1px solid #b3b1b1;
+}

@@ -1,0 +1,22 @@
+.SearchForm {
+    color: #ffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .SearchForm .input{
+    outline: none;
+    padding: 8px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 8px;
+  }
+
+  .SearchForm .button{
+    color: white;
+  padding: 8px 16px;
+  border: 1px solid #ffff;
+  border-radius: 4px;
+  cursor: pointer;
+  }

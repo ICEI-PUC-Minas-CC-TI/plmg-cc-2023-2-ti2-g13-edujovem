@@ -47,12 +47,12 @@ public class AdminController {
         return userAdminService.getUser(id);
     }
 
-    @DeleteMapping("/deleteuser/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Integer id){
         return userAdminService.deleteUser(id);
     }
 
-    @PutMapping("/updateuser/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Integer id, @RequestBody User updatedUser){
         return userAdminService.updateUser(id, updatedUser);
     }

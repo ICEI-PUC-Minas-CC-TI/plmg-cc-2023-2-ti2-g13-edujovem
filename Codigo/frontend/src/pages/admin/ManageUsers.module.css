@@ -1,5 +1,9 @@
 .ManageUsers {
-   background: linear-gradient(to bottom, #000000, #333333);
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   background: linear-gradient(to bottom, #000000, #333333,  #000000);
+   padding: 1em;
 }
 
 .ManageUsers h1 {
@@ -16,18 +20,36 @@
     margin: 10px;
     padding: 10px;
     background-color: #f9f9f9;
-    text-align: center;
-    width: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 20%;
+    gap: 1em;
  }
+
 .ManageUsers .users {
    display: flex;
    justify-content: center;
-   flex-wrap: wrap;
    list-style: none;
    padding: 0;
 }
-
+.ManageUsers .users .content{
+   text-align: left;
+   overflow: hidden;
+}
 .ManageUsers footer {
-   text-align: center;
+   margin-top: auto;
    display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.ManageUsers footer .search {
+   margin-top: auto;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   gap: 2em;
 }

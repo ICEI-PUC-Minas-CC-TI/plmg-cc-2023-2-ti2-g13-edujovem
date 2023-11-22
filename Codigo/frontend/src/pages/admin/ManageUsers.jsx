@@ -15,6 +15,7 @@ import useIcons from '../../hooks/useIcons';
 // COMPONENTS
 import NavBarAdmin from './NavBarAdmin'
 import Button from '../../components/Button';
+import SearchForm from '../../components/SearchForm';
 
 const ManageUsers = () => {
   const [users, setUsers] = useState([])
@@ -47,8 +48,10 @@ const ManageUsers = () => {
           <ul className={styles.users}>
             {users && users.map((user)=>( 
               <li key={user.userId}>
-              <h2><strong>Username: </strong> {user.username}</h2>
-              <p><strong>Email: </strong> {user.email}</p>
+              <div className={styles.content}>
+                <p><strong>ID: {user.userId}</strong></p>
+                <h2><strong>Username: </strong> {user.username}</h2>
+              </div>
               <Link to={`/admin/manage/${user.userId}`}><Button> <AdminIcon /> </Button></Link>
             </li>
             ))}
@@ -56,14 +59,16 @@ const ManageUsers = () => {
         </div>
         <footer>
         <NavLink to='/admin'>
-          <Button><IoIosArrowBack /></Button>
+          <Button> <IoIosArrowBack size={30}/></Button>
         </NavLink>
+
+        <div className={styles.search}>
+          <h1>Pesquisar Usuarios: </h1>
+        <SearchForm />
+        </div>
         </footer>
     </div>
   )
 }
-{/* <li key={user.userId}><strong>ID: {user.userId}</strong> |
-             <strong>Nick:</strong> {user.username} | <strong>Nome:</strong> {user.name} | 
-             <strong>Email: </strong>{user.email} | </li> */}
 
 export default ManageUsers
