@@ -5,7 +5,7 @@ import styles from './ExpenseReport.module.css'
 
 // ICONS
 import { IoIosArrowBack } from 'react-icons/io';
-import { DollarSign } from 'react-feather';
+//import { DollarSign } from 'react-feather';
 
 // COMPONENTS
 import Button from '../../components/Button'
