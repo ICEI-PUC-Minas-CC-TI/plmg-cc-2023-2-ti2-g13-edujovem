@@ -9,6 +9,7 @@ public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer ID;
+
     private Instant moment;
     private String theme;
 

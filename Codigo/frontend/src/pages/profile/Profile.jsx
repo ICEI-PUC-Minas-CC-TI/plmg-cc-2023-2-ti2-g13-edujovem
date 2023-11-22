@@ -4,19 +4,20 @@ import { NavLink, Navigate } from "react-router-dom";
 
 // COMPONENTS
 import Button from "../../components/Button";
-import RendaForm from "./RendaForm";
+import IncomeForm from "../caderninho/IncomeForm";
 
 // HOOKS
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Profile = () => {
-   
+   const { user } = useAuthContext();
    return (
-      <div>
+      <div className={styles.Profile}>
+         
+         <h1>Ola, <span>{user.user.username}</span></h1>
          <NavLink to="/home">
             <Button>Sair</Button>
          </NavLink>
-         <RendaForm />
       </div>
    );
 };

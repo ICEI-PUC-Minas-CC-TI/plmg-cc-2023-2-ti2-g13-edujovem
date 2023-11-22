@@ -75,7 +75,7 @@ const Caderninho = () => {
                   />
                ))}
          </div>
-         <Search search={search} setSearch={setSearch} />
+         <Search label="Buscar despesa: " placeholder="Pesquisar por nome" search={search} setSearch={setSearch} />
          <ExpenseForm addExpense={addExpense} />
       </div>
    );
