@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.EduJovem.models.User;
 import com.EduJovem.models.payload.LoginResponseDTO;
 import com.EduJovem.models.payload.RegistrationDTO;
 import com.EduJovem.services.authentication.AuthenticationService;

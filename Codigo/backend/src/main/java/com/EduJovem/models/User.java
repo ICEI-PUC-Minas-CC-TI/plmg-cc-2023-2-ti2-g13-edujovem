@@ -52,7 +52,7 @@ public class User implements UserDetails{
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "user")
-	private List<Despesas> expenses = new ArrayList<>();
+	private List<Expense> expenses = new ArrayList<>();
 
 
     public User() {
@@ -127,7 +127,7 @@ public class User implements UserDetails{
 	public List<Mundo> getMundos() {
 		return mundos;
 	}
-	public List<Despesas> getExpenses() {
+	public List<Expense> getExpenses() {
 		return expenses;
 	}
 	

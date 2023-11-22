@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet"; // Certifique-se de importar Helmet corretamente
 // COMPONENTS
 import Button from "../../components/Button";
 import MouseHoverBox from "../../components/MouseHoverBox";
@@ -16,13 +17,15 @@ import Caderninho from "../caderninho/Caderninho";
 // HOOKS
 import { useAuthContext } from "../../hooks/useAuthContext";
 
+
+            
 const Home = () => {
    const { logout, role } = useAuthContext();
 
    const handleLogout = () => {
       logout();
    };
-
+   
    //<div className=' shadow-lg bg-[#ffffff] from-[#cacaca] to-[#f0f0f0] rounded-md h-[60%]'>aaaaaa</div>
 
    return (
@@ -31,12 +34,29 @@ const Home = () => {
             <div>
                <Navigate to="/admin" />
             </div>
+            
          ) : (
             <div
                className="
       w-[100vw] h-[100vh] bg-[#B4EFF7] flex inline-flex text-black justify-between gap-x-4 truncate text-black font-montserrat
    "
             >
+               <Helmet>
+                  <script src="https://unpkg.com/blip-chat-widget" type="text/javascript" />
+                  <script>
+                     {`
+                        (function () {
+                           window.onload = function () {
+                              new BlipChat()
+                                 .withAppKey('ZWR1Mzk6YmUwOTM2ZWEtNGFkOC00YTQ5LWFkOWQtMWU2MTU2ZjU3M2U2')
+                                 .withButton({"color":"#161616","icon":""})
+                                 .withCustomCommonUrl('https://rodrigo-drummond-6apfd.chat.blip.ai/')
+                                 .build();
+                           }
+                        })();
+                     `}
+                  </script>
+               </Helmet>
                <section className="relative rounded-md shadow-lg bg-[#ffffff] from-10% from-[#cacaca] to-[#f0f0f0] h-[97vh] w-[20%] my-3 ml-3">
                   <MouseHoverBox borderColor={"#FF810B"}>
                      <div className="relative w-full h-full flex flex-col items-center gap-y-2 px-1">
@@ -144,9 +164,12 @@ const Home = () => {
                      </MouseHoverBox>
                   </section>
                </section>
+               
             </div>
          )}
+         
       </>
+      
    );
 };
 //#E4E4E4

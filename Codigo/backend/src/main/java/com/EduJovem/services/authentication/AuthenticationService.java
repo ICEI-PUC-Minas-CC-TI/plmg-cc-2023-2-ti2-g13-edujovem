@@ -44,8 +44,6 @@ public class AuthenticationService {
     private NivelRepository nivelRepository;
     @Autowired
     private ExpenseRepository expRepository;
-    @Autowired
-    private DespesaRepository deRepository;
 
     public ResponseEntity<?> addDispesa(Expense expense) {
         return new ResponseEntity<>(expRepository.save(expense), HttpStatus.OK);
@@ -119,11 +117,8 @@ public class AuthenticationService {
             return new ResponseEntity<>(nivelRepository.save(nivel), HttpStatus.OK);
         }
     }
-    public ResponseEntity<?> addExpenses(Expense exp){
-        return new ResponseEntity<>(expRepository.save(exp), HttpStatus.OK);
-    }
 
-    public ResponseEntity<?> addDespesa(Despesas despesa) {
-        return new ResponseEntity<>(deRepository.save(despesa), HttpStatus.OK);
+    public ResponseEntity<?> addExpense(Expense expense) {
+            return new ResponseEntity<>(expRepository.save(expense), HttpStatus.OK);
     }
 }
