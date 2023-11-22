@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.EduJovem.models.Mundo;
 import com.EduJovem.models.Nivel;
+import com.EduJovem.services.ExpenseService;
 import com.EduJovem.services.game.MundoService;
 import com.EduJovem.services.game.NivelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,8 @@ public class AdminController {
     private MundoService mundoService;
     @Autowired
     private NivelService nivelService;
+    @Autowired
+    private ExpenseService expenseService;
     
     @GetMapping("/")
     public String helloAdmineController(){
@@ -71,5 +74,9 @@ public class AdminController {
     @PutMapping("/updatenivel/{id}")
     public ResponseEntity<Nivel> updateNivel(@PathVariable Integer id, @RequestBody Nivel updateNivel){
         return nivelService.updateNivel(id, updateNivel);
+    }
+    @DeleteMapping("/deleteExpense/{id}")
+    public ResponseEntity<Void> deleteExpense(@PathVariable Integer id){
+        return expenseService.deleteExpese(id);
     }
 }
