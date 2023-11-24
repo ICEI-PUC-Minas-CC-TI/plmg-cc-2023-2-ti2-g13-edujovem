@@ -8,7 +8,7 @@ export default function MouseHoverBox({ borderColor, children }) {
     const handleMouseMove = (e) => {
         const clock = document.querySelector('.clock');
         const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 3;
+        const centerY = window.innerHeight / 2;
   
         const mouseX = e.clientX - clock.getBoundingClientRect().left - centerX;
         const mouseY = e.clientY - clock.getBoundingClientRect().top - centerY;

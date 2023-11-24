@@ -15,6 +15,8 @@ import ManageUsers from './pages/admin/ManageUsers'
 import ExpenseReport from './pages/caderninho/ExpenseReport'
 import UserDetails from './pages/admin/UserDetails'
 import IncomeForm from './pages/caderninho/IncomeForm'
+import Mundo from './pages/mundos/Mundo'
+import Nivel from './pages/niveis/Nivel'
 
 // CONTEXT
 import { AuthContextProvider, AuthContext } from './context/AuthContext'
@@ -51,6 +53,8 @@ function App() {
             <Route path='/caderninho' element={<Private><Caderninho /></Private>} />
             <Route path='/caderninho/income' element={<Private><IncomeForm /></Private>} />
             <Route path='/report' element={<Private><ExpenseReport /></Private>} />
+            <Route path='/home/mundo' element={<Mundo/>} />
+            <Route path='/home/mundo/nivel' element={<Nivel/>} />
             <Route path='*' element={<NotFound />} />
         </Routes>
       </div>

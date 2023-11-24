@@ -26,8 +26,8 @@ export default function MundoCard({title, id, desc}){
                 {isHovered ? null : (
                     <div className="relative p-4 w-full h-full max-w-[350px] flex flex-col ">
                         <h1 className='font-bold font-montserrat w-full h-[10%]'>Mundo {id}</h1>
-                        <div className='w-[100px] h-[80%] break-words pt-2 font-montserrat' >
-                            Este é um exemplo de <br/>descrição de mundo.<br/> Serão contidas aqui <br/>informações adicionais
+                        <div className='w-full h-full break-words pt-2 font-montserrat  whitespace-normal truncate' >
+                            {desc}
                         </div>
                     </div>
                 )}
