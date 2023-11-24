@@ -2,6 +2,7 @@ package com.EduJovem.controllers;
 
 import com.EduJovem.models.Expense;
 
+import com.EduJovem.repository.ExpenseRepository;
 import com.EduJovem.services.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,8 @@ public class ExpenseController{
 
     @Autowired
     private ExpenseService expenseService;
+    @Autowired
+    private ExpenseRepository expenseRepository;
     @GetMapping("/testaExpense")
     public String helloMundoController(){
         return "Despesa access level";
@@ -35,6 +38,10 @@ public class ExpenseController{
         return expenseService.getAllExpense();
     }
 
+    @GetMapping("/ordenarExpenses")
+    public List<Expense> ordenarPorValor(){
+        return expenseRepository.findByOrderByValuessss();
+    }
     @GetMapping("/totalExpenses")
     public Double totalExpenses(){
         double sum = 0;
@@ -46,6 +53,10 @@ public class ExpenseController{
 
     }
 
+    @GetMapping("/findExpenseByTheme")
+    public List<Expense> getExpensesByTheme(String theme){
+        return expenseRepository.findByThemeStartingWith(theme);
+    }
 
 
 }
