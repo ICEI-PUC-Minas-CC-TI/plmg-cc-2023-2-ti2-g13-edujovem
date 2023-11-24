@@ -41,25 +41,24 @@ const Home = () => {
       ) : (
         <div
           className="
-      w-[100vw] h-[100vh] bg-[#B4EFF7] flex inline-flex text-black justify-between gap-x-4 truncate text-black font-montserrat
+      w-[100vw] h-[100vh] bg-[blackF] flex inline-flex text-black justify-between gap-x-4 truncate text-black font-montserrat
    "
         >
           <Helmet>
-            <script
-              src="https://unpkg.com/blip-chat-widget"
-              type="text/javascript"
-            ></script>
+          <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+
             <script>
               {`
-                (function () {
-                    window.onload = function () {
-                        new BlipChat()
-                            .withAppKey('ZWR1Mzk6YmUwOTM2ZWEtNGFkOC00YTQ5LWFkOWQtMWU2MTU2ZjU3M2U2')
-                            .withButton({"color":"#161616","icon":""})
-                            .withCustomCommonUrl('https://rodrigo-drummond-6apfd.chat.blip.ai/')
-                            .build();
-                    }
-                })();
+                    (function () {
+                        window.onload = function () {
+                            new BlipChat()
+                                .withAppKey('ZWR1Mzk6YmUwOTM2ZWEtNGFkOC00YTQ5LWFkOWQtMWU2MTU2ZjU3M2U2')
+                                .withButton({"color":"#161616","icon":""})
+                                .withCustomCommonUrl('https://rodrigo-drummond-6apfd.chat.blip.ai/')
+                                .build();
+                        }
+                    })();
+                            
       `}
             </script>
           </Helmet>
