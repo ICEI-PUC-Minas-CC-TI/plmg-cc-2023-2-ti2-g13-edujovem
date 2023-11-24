@@ -31,6 +31,11 @@ export const addExpenses = async (data) => {
     return api.post("expenses/addExpense", data);
 };
 
+
 export const deleteExpense = async (expenseId) => {
    return api.delete(`/admin/deleteExpense/${expenseId}`);
 };
+
+export const nextExpense = async () =>{
+   return api.post("azure/despesaFutura");
+}

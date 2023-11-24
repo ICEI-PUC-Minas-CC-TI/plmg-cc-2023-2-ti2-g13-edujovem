@@ -16,7 +16,7 @@ import com.nimbusds.jose.shaded.gson.JsonObject;
 public class Https {
 
 
-    public static void fazerRequisicaoAzure() {
+    public static double fazerRequisicaoAzure() {
         HttpPost post;
         CloseableHttpClient client;
         StringEntity entity;
@@ -65,6 +65,7 @@ public class Https {
                 String responseBody = EntityUtils.toString(authResponse.getEntity());
                 double resultado = extrairValorDoubleDoResponseBody(responseBody);
                 System.out.println("Valor: " + resultado);
+                return resultado;
 
             } else {
                 System.out.println("Erro na requisição. Código de status: " + statusCode);
@@ -72,6 +73,7 @@ public class Https {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return 0;
     }
 
     private static double extrairValorDoubleDoResponseBody(String responseBody) {
