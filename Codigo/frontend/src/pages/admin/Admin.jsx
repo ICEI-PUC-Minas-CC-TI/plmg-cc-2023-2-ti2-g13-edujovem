@@ -46,9 +46,9 @@ const Admin = () => {
                   imageUrl="https://via.placeholder.com/300"
                >
                   <div className={styles.midias}>
-                     <Button onClick={() => openLinkInNewTab('https://www.instagram.com/thomas_neuenschwander/')}> <InstagramIcon /> </Button>
-                     <Button onClick={() => openLinkInNewTab('https://www.linkedin.com/in/thomas-neuenschwander-87a568267/')}> <LinkedInIcon /> </Button>
-                     <Button onClick={() => openLinkInNewTab('https://github.com/thomneuenschwander')}> <GithubIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://www.instagram.com/mfagundes_13/')}> <InstagramIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://www.linkedin.com/in/m4fagundes/')}> <LinkedInIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://github.com/m4Fagundes')}> <GithubIcon /> </Button>
                   </div>
                </Card>
                <Card
@@ -57,9 +57,9 @@ const Admin = () => {
                   imageUrl="https://via.placeholder.com/300"
                >
                   <div className={styles.midias}>
-                     <Button onClick={() => openLinkInNewTab('https://www.instagram.com/thomas_neuenschwander/')}> <InstagramIcon /> </Button>
-                     <Button onClick={() => openLinkInNewTab('https://www.linkedin.com/in/thomas-neuenschwander-87a568267/')}> <LinkedInIcon /> </Button>
-                     <Button onClick={() => openLinkInNewTab('https://github.com/thomneuenschwander')}> <GithubIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://www.instagram.com/digodrummond_/')}> <InstagramIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://www.linkedin.com/in/rodrigo-drummond-257099280/')}> <LinkedInIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://github.com/DigoDrummond')}> <GithubIcon /> </Button>
                   </div>
                </Card>
                <Card
@@ -68,9 +68,9 @@ const Admin = () => {
                   imageUrl="https://via.placeholder.com/300"
                >
                   <div className={styles.midias}>
-                     <Button onClick={() => openLinkInNewTab('https://www.instagram.com/thomas_neuenschwander/')}> <InstagramIcon /> </Button>
-                     <Button onClick={() => openLinkInNewTab('https://www.linkedin.com/in/thomas-neuenschwander-87a568267/')}> <LinkedInIcon /> </Button>
-                     <Button onClick={() => openLinkInNewTab('https://github.com/thomneuenschwander')}> <GithubIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://www.instagram.com/vini_godd/')}> <InstagramIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://www.linkedin.com/in/vin%C3%ADcius-goddard-747365274/')}> <LinkedInIcon /> </Button>
+                     <Button onClick={() => openLinkInNewTab('https://github.com/VHDGoddard')}> <GithubIcon /> </Button>
                   </div>
                </Card>
             </div>

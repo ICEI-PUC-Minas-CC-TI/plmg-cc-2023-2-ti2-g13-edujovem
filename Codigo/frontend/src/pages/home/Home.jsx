@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { NavLink, Navigate } from "react-router-dom";
-import { Helmet } from "react-helmet"; // Certifique-se de importar Helmet corretamente
+import { Helmet } from "react-helmet"; 
 // COMPONENTS
 import Button from "../../components/Button";
 import MouseHoverBox from "../../components/MouseHoverBox";
@@ -22,7 +22,7 @@ import Cifrao from "../../assets/cifrao.png";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 
-
+            
 const Home = () => {
   const { logout, role } = useAuthContext();
 
@@ -40,27 +40,28 @@ const Home = () => {
         <div>
           <Navigate to="/admin" />
         </div>
-
       ) : (
         <div
           className="
-      w-[100vw] h-[100vh] bg-[#B4EFF7] flex inline-flex text-black justify-between gap-x-4 truncate text-black font-montserrat
+      w-[100vw] h-[100vh] bg-[blackF] flex inline-flex text-black justify-between gap-x-4 truncate text-black font-montserrat
    "
         >
           <Helmet>
-            <script src="https://unpkg.com/blip-chat-widget" type="text/javascript" />
+          <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
+
             <script>
               {`
-                        (function () {
-                           window.onload = function () {
-                              new BlipChat()
-                                 .withAppKey('ZWR1Mzk6YmUwOTM2ZWEtNGFkOC00YTQ5LWFkOWQtMWU2MTU2ZjU3M2U2')
-                                 .withButton({"color":"#161616","icon":""})
-                                 .withCustomCommonUrl('https://rodrigo-drummond-6apfd.chat.blip.ai/')
-                                 .build();
-                           }
-                        })();
-                     `}
+                    (function () {
+                        window.onload = function () {
+                            new BlipChat()
+                                .withAppKey('ZWR1Mzk6YmUwOTM2ZWEtNGFkOC00YTQ5LWFkOWQtMWU2MTU2ZjU3M2U2')
+                                .withButton({"color":"#161616","icon":""})
+                                .withCustomCommonUrl('https://rodrigo-drummond-6apfd.chat.blip.ai/')
+                                .build();
+                        }
+                    })();
+                            
+      `}
             </script>
           </Helmet>
           <section className="relative rounded-md shadow-lg bg-[#ffffff] from-10% from-[#cacaca] to-[#f0f0f0] h-[97vh] w-[20%] my-3 ml-3">
@@ -93,8 +94,9 @@ const Home = () => {
                     <h1 className="pl-3">Calc. juros</h1>
                   </div>
 
-
-                  <NavLink to="/report" className="
+                  <NavLink to="/report">
+                    <div
+                      className="
                 bg-[#A2A2A2] shadow-md text-white font-bold hover:bg-[#D66F00] h-fit 
                 flex inline-flex items-center uppercase tracking-normal transition-colors 
                 duration-150 text-base px-4 w-full rounded-md">
@@ -104,7 +106,9 @@ const Home = () => {
                     <h1 className="pl-3">gastos mensais</h1>
                   </NavLink>
 
-                  <NavLink to="/caderninho/income" className="
+                  <NavLink to="/caderninho/income">
+                    <div
+                      className="
                 bg-[#A2A2A2] shadow-md text-white font-bold hover:bg-[#D66F00] h-fit 
                 flex inline-flex items-center uppercase tracking-normal transition-colors 
                 duration-150 text-base px-4 w-full rounded-md">

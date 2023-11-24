@@ -1,12 +1,9 @@
 package com.EduJovem.controllers;
 
+import com.EduJovem.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.EduJovem.models.payload.LoginResponseDTO;
 import com.EduJovem.models.payload.RegistrationDTO;
@@ -19,6 +16,8 @@ public class AuthenticationController {
 
     @Autowired
     private AuthenticationService authenticationService;
+    @Autowired
+    private UserRepository userRepository;
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody RegistrationDTO body){
@@ -28,5 +27,10 @@ public class AuthenticationController {
     @PostMapping("/login")
     public LoginResponseDTO loginUser(@RequestBody RegistrationDTO body){
         return authenticationService.loginUser(body.getUsername(), body.getPassword());
+    }
+
+    @GetMapping("/count")
+    public Long countUsers(){
+        return userRepository.count();
     }
 }   
