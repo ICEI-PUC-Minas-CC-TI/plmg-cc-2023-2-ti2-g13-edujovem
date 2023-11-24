@@ -43,7 +43,7 @@ const Home = () => {
       ) : (
         <div
           className="
-      w-[100vw] h-[100vh] bg-[blackF] flex inline-flex text-black justify-between gap-x-4 truncate text-black font-montserrat
+      w-[100vw] h-[100vh] bg-[#606060] flex inline-flex text-black justify-between gap-x-4 truncate text-black font-montserrat
    "
         >
           <Helmet>

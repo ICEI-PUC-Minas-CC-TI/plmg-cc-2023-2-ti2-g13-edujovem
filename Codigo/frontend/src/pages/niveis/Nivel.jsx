@@ -25,7 +25,10 @@ export default function Nivel({ title, id, desc }) {
     const [pontuacao, setPontuacao] = useState(0);
 
     const handleButtonClick = (opcoesResposta) => {
-        if (opcoesResposta.correta) {
+        if(perguntaIndex == Perguntas.length - 1 ){
+            setPerguntaIndex(0);
+            console.log(perguntaIndex);
+        } else if (opcoesResposta.correta) {
             setPerguntaIndex(perguntaIndex + 1);
             setPontuacao(pontuacao + 1);
         } else {
@@ -33,6 +36,7 @@ export default function Nivel({ title, id, desc }) {
             console.log(perguntaIndex);
         }
         setReloadDiv(reloadDiv + 1);
+        Perguntas[Perguntas.length - 1].pergunta = `Pontuação: ${pontuacao}`;
     };
 
     return (
@@ -69,6 +73,7 @@ export default function Nivel({ title, id, desc }) {
                                         {opcoesResposta.resposta}
                                     </Button>
                                 ))}
+                                
                             </div>
                         </div>
 

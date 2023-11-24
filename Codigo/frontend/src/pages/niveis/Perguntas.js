@@ -20,5 +20,22 @@ export const Perguntas = [
             {resposta:"Poupadora", correta:false},
             {resposta:"endividada", correta:false},
         ]
+    },
+    {
+        id:2,
+        pergunta: 
+        "teste",
+        opcoesResposta: [
+            {resposta:"1", correta:false},
+            {resposta:"2", correta:true},
+            {resposta:"3", correta:false},
+            {resposta:"4", correta:false},
+        ]
+    },
+    {
+        id:999,
+        pergunta: 
+        "FIM",
+        opcoesResposta: []
     }
 ]
