@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 // CSS
 import styles from "./IncomeForm.module.css";
@@ -15,6 +15,7 @@ import Button from "../../components/Button";
 import { api, addExpenses } from "../../../services/api";
 
 const IncomeForm = () => {
+   const navigate = useNavigate();
    const [expenseData, setExpenseData] = useState({
       moment: "",
       theme: "",
@@ -41,11 +42,11 @@ const IncomeForm = () => {
             theme: "",
             value: 0.0,
          });
+         navigate("/home")
       } catch (error) {
          console.error("Erro ao enviar os dados:", error);
       }
 
-      console.log("Dados enviados:", expenseData);
    };
 
    const handleInputChange = (e) => {
@@ -61,7 +62,7 @@ const IncomeForm = () => {
          <h1 className="flex justify-center items-center font-extrabold gap-8 text-2xl font-montserrat">
             Anote sua despesa <FaPen />
          </h1>
-         <form className="" onSubmit={handleSubmit}>
+         <form className="mb-[2em]" onSubmit={handleSubmit}>
             <label className="flex flex-col mb-[1em]">
                <span className="font-bold mb-[0.3em] text-left">Dia: </span>
                <input
@@ -97,12 +98,12 @@ const IncomeForm = () => {
                   onChange={handleInputChange}
                />
             </label>
-            <button type="submit" className="btn">
+            <Button intent="save"  size="large">
                Registrar
-            </button>
+            </Button>
          </form>
          <NavLink to="/home">
-            <Button size="large" intent="emphasis1">
+            <Button size="large" intent="emphasis1" >
                <IoIosArrowBack size={30} />
             </Button>
          </NavLink>

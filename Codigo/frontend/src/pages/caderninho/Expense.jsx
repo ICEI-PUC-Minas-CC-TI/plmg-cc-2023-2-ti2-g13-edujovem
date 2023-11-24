@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 
 // CSS
 import styles from './Expense.module.css'
@@ -6,7 +6,27 @@ import styles from './Expense.module.css'
 // COMPONENTS
 import Button from '../../components/Button'
 
-const Expense = ({ expense }) => {
+// SERVICES
+import { api, deleteExpense } from '../../../services/api'
+
+const Expense = ({ expense, onDelete  }) => {
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  const handleDeleteExpense = async () => {
+    try {
+      setIsDeleting(true);
+      await deleteExpense(expense.id);
+
+      if (onDelete) {
+        onDelete(expense.id);
+      }
+    } catch (error) {
+      console.error('Erro ao excluir despesa:', error);
+    } finally {
+      setIsDeleting(false);
+    }
+  };
+
   return (
     <div className={styles.expense}>
       <ul className={styles.content}>
@@ -14,7 +34,7 @@ const Expense = ({ expense }) => {
         <li>{expense.theme}</li>
         <li>{expense.moment}</li>
       </ul>
-      <Button intent="delete" size="small">X</Button>
+      <Button intent="delete" size="small" onClick={handleDeleteExpense} disabled={isDeleting }>X</Button>
     </div>
   )
 }

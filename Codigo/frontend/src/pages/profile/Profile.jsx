@@ -13,7 +13,6 @@ const Profile = () => {
    const { user } = useAuthContext();
    return (
       <div className={styles.Profile}>
-         
          <h1>Ola, <span>{user.user.username}</span></h1>
          <NavLink to="/home">
             <Button>Sair</Button>
