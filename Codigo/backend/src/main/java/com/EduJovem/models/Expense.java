@@ -3,6 +3,8 @@ package com.EduJovem.models;
 import jakarta.persistence.*;
 
 import java.time.Instant;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 
 @Entity
 public class Expense {
@@ -15,9 +17,8 @@ public class Expense {
 
     private Double valuessss;
 
-
     @ManyToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Instant getMoment() {
@@ -35,18 +36,26 @@ public class Expense {
     public void setID(Integer ID) {
         this.ID = ID;
     }
+
     public String getTheme() {
         return theme;
     }
+
     public void setTheme(String tema) {
         this.theme = tema;
     }
+
     public Double getValue() {
         return valuessss;
     }
+
     public void setValue(Double valor) {
         this.valuessss = valor;
     }
 
-}
 
+    public int getMonth(){
+        ZonedDateTime time = ZonedDateTime.ofInstant(moment, ZoneOffset.UTC);
+        return time.getMonthValue();
+    }
+}

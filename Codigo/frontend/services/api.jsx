@@ -30,3 +30,7 @@ export const getAllExpenses = async () => {
 export const addExpenses = async (data) => {
     return api.post("expenses/addExpense", data);
 };
+
+export const nextExpense = async () =>{
+   return api.post("azure/despesaFutura");
+}

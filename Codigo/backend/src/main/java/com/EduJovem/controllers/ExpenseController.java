@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -41,6 +42,17 @@ public class ExpenseController{
     public List<Expense> ordenarPorValor(){
         return expenseRepository.findByOrderByValuessss();
     }
+    @GetMapping("/totalExpenses")
+    public Double totalExpenses(){
+        double sum = 0;
+        List<Expense> total = expenseService.getAllExpense();
+        for(Expense e: total){
+            sum+= e.getValue();
+        }
+        return sum;
+
+    }
+
 
 
 }
