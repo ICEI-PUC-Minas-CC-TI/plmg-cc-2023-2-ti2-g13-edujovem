@@ -94,8 +94,7 @@ const Home = () => {
                     <h1 className="pl-3">Calc. juros</h1>
                   </div>
 
-                  <NavLink to="/report">
-                    <div
+                  <NavLink to="/report"
                       className="
                 bg-[#A2A2A2] shadow-md text-white font-bold hover:bg-[#D66F00] h-fit 
                 flex inline-flex items-center uppercase tracking-normal transition-colors 
@@ -106,8 +105,7 @@ const Home = () => {
                     <h1 className="pl-3">gastos mensais</h1>
                   </NavLink>
 
-                  <NavLink to="/caderninho/income">
-                    <div
+                  <NavLink to="/caderninho/income"
                       className="
                 bg-[#A2A2A2] shadow-md text-white font-bold hover:bg-[#D66F00] h-fit 
                 flex inline-flex items-center uppercase tracking-normal transition-colors 
