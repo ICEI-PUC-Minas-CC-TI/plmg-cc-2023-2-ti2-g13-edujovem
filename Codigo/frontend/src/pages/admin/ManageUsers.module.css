@@ -31,6 +31,7 @@
 .ManageUsers .users {
    display: flex;
    justify-content: center;
+   flex-wrap: wrap;
    list-style: none;
    padding: 0;
 }
