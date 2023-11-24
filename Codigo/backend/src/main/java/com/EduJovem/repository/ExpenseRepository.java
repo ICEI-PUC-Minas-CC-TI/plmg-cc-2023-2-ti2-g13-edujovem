@@ -14,6 +14,8 @@ public interface ExpenseRepository extends JpaRepository<Expense, Integer> {
 
     List<Expense> findByOrderByValuessss();
 
+    List<Expense> findByThemeStartingWith(String theme);
+
 }
 
 

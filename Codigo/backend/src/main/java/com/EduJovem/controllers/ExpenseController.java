@@ -53,6 +53,10 @@ public class ExpenseController{
 
     }
 
+    @GetMapping("/findExpenseByTheme")
+    public List<Expense> getExpensesByTheme(String theme){
+        return expenseRepository.findByThemeStartingWith(theme);
+    }
 
 
 }
