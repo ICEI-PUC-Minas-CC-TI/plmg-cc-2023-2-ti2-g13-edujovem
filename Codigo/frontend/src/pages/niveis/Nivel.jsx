@@ -25,19 +25,30 @@ export default function Nivel({ title, id, desc }) {
     const [pontuacao, setPontuacao] = useState(0);
 
     const handleButtonClick = (opcoesResposta) => {
+        
         if(perguntaIndex == Perguntas.length - 1 ){
             setPerguntaIndex(0);
-            console.log(perguntaIndex);
+            
         } else if (opcoesResposta.correta) {
             setPerguntaIndex(perguntaIndex + 1);
-            setPontuacao(pontuacao + 1);
+            
+            setPontuacao((prevPontuacao) => prevPontuacao + 1);
+            
         } else {
             setPerguntaIndex(perguntaIndex + 1);
-            console.log(perguntaIndex);
+            
         }
+        
+        
+        useEffect(() => {
+            console.log(pontuacao);
+            Perguntas[Perguntas.length - 1].pergunta = `Pontuação: ${pontuacao}`;
+        }, [pontuacao]);
+        
         setReloadDiv(reloadDiv + 1);
-        Perguntas[Perguntas.length - 1].pergunta = `Pontuação: ${pontuacao}`;
     };
+
+    
 
     return (
         <>
@@ -73,6 +84,7 @@ export default function Nivel({ title, id, desc }) {
                                         {opcoesResposta.resposta}
                                     </Button>
                                 ))}
+                                
                                 
                             </div>
                         </div>
