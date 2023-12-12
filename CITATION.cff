@@ -21,7 +21,8 @@ authors:
 keywords:
   - Educação Financeira
   - Educação para Jovens
-repository-code: 
+  - Sistema Inteligente
+repository-code: https://github.com/ICEI-PUC-Minas-CC-TI/plmg-cc-2023-2-ti2-g13-edujovem
 license: CC-BY-4.0
 version: 1.0.0
 date-released: 2022-07-14
